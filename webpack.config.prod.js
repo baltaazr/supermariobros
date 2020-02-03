@@ -29,12 +29,12 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin([
       {
-        from: "build/assets",
+        from: "public/assets",
         to: "assets"
       }
     ]),
     new HTMLWebpackPlugin({
-      template: "build/index.html",
+      template: "public/index.html",
       filename: "index.html",
       hash: true,
       minify: false
