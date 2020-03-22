@@ -13,9 +13,9 @@ const innerHeight = window.innerHeight;
 let Application = PIXI.Application,
   loader = PIXI.Loader.shared;
 let Engine = Matter.Engine,
-  World = Matter.World,
-  Bodies = Matter.Bodies;
+  World = Matter.World;
 
+//PIXI Setup
 const renderer = new Application({
   width: innerWidth,
   height: innerHeight,
@@ -24,6 +24,10 @@ const renderer = new Application({
 PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
 document.body.appendChild(renderer.view);
 
+//Matter Engine
+const engine = Engine.create();
+
+// Game Setup
 let player, enemy, map, textures, state;
 loader.add("images/custom.json").load(() => {
   textures = loader.resources["images/custom.json"].textures;
@@ -33,6 +37,7 @@ loader.add("images/custom.json").load(() => {
 
   player = new Player(textures);
   renderer.stage.addChild(player.sprite);
+  World.add(engine.world, [player.body]);
 
   state = play;
 
@@ -44,8 +49,7 @@ const gameLoop = delta => {
 };
 
 const play = delta => {
-  player.sprite.x += player.sprite.vx;
-  player.sprite.y += player.sprite.vy;
+  player.updatePos();
 };
 
-console.log();
+Engine.run(engine);
