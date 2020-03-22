@@ -2,7 +2,7 @@ import * as PIXI from "pixi.js";
 import * as Matter from "matter-js";
 import Config from "config";
 
-import Player from "./modules/player/player";
+import { Player, Enemy, Map } from "./modules";
 
 const SCALE = Config.scale;
 
