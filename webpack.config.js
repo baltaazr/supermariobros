@@ -8,6 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, "build"),
     filename: "bundle.js"
   },
+  devtool: "source-map",
   devServer: {
     contentBase: "build"
   },
@@ -26,5 +27,10 @@ module.exports = {
         ]
       }
     ]
+  },
+  resolve: {
+    alias: {
+      config$: path.resolve(__dirname, "config/")
+    }
   }
 };
