@@ -12,6 +12,9 @@ const innerHeight = window.innerHeight;
 //Aliases
 let Application = PIXI.Application,
   loader = PIXI.Loader.shared;
+let Engine = Matter.Engine,
+  World = Matter.World,
+  Bodies = Matter.Bodies;
 
 const renderer = new Application({
   width: innerWidth,
