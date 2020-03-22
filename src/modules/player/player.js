@@ -4,7 +4,8 @@ import Config from "config";
 
 import Controls from "./controls";
 
-const SCALE = Config.scale;
+const SCALE = Config.scale,
+  BLOCK_SIZE = Config.blockSize;
 
 let Sprite = PIXI.Sprite,
   Bodies = Matter.Bodies;
@@ -17,7 +18,7 @@ export default class Player {
     this.sprite.vx = 0;
     this.sprite.vy = 0;
 
-    this.body = Bodies.rectangle(0, 0, SCALE, SCALE);
+    this.body = Bodies.rectangle(0, 0, BLOCK_SIZE, BLOCK_SIZE);
 
     this.controls = new Controls(this);
   }
