@@ -7,5 +7,9 @@ export default {
     height: 14,
     width: 212,
     floorY: 12.5
+  },
+  controls: {
+    accel: 1,
+    jumpForce: 2.5
   }
 };
