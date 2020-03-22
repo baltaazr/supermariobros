@@ -1,3 +1,8 @@
 export default {
-  scale: 5
+  // height of map is 224 pixels
+  scale: window.innerHeight / 224,
+  map: {
+    // in blocks
+    height: 14
+  }
 };

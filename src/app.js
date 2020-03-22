@@ -21,9 +21,13 @@ const renderer = new Application({
 PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
 document.body.appendChild(renderer.view);
 
-let player, textures, state;
+let player, enemy, map, textures, state;
 loader.add("images/custom.json").load(() => {
   textures = loader.resources["images/custom.json"].textures;
+
+  map = new Map(textures);
+  renderer.stage.addChild(map.sprite);
+
   player = new Player(textures);
   renderer.stage.addChild(player.sprite);
 
