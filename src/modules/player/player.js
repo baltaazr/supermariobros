@@ -18,7 +18,7 @@ export default class Player {
     this.sprite = new Sprite(textures["mario_standing.png"]);
     this.sprite.scale.set(SCALE);
 
-    this.accel = { x: 0, y: 0 };
+    this.accel = 0;
 
     this.body = Bodies.rectangle(
       0,
@@ -40,27 +40,33 @@ export default class Player {
     this.sprite.y = this.body.position.y;
 
     Body.setVelocity(this.body, {
-      x: (this.body.velocity.x += this.accel.x),
-      y: (this.body.velocity.y += this.accel.y)
+      x: (this.body.velocity.x += this.accel),
+      y: this.body.velocity.y
     });
 
     Body.setAngularVelocity(this.body, 0);
   }
 
   updateSprite() {
-    if (this.accel.x !== 0) {
-      this.sprite.texture = this.textures[this.getNextMovingSprite()];
+    if (this.body.velocity.y < -1) {
+      this.sprite.texture = this.textures["mario_jump.png"];
+    } else if (this.body.velocity.y > 1) {
+      this.sprite.texture = this.textures["mario_fall.png"];
     } else {
-      this.dFrames = -1;
-      this.sprite.texture = this.textures["mario_standing.png"];
-    }
+      if (this.accel !== 0) {
+        this.sprite.texture = this.textures[this.getNextMovingSprite()];
+      } else {
+        this.dFrames = -1;
+        this.sprite.texture = this.textures["mario_standing.png"];
+      }
 
-    if (this.accel.x > 0) {
-      this.sprite.scale.x = SCALE;
-      this.backwards = false;
-    } else if (this.accel.x < 0) {
-      this.sprite.scale.x = -SCALE;
-      this.backwards = true;
+      if (this.accel > 0) {
+        this.sprite.scale.x = SCALE;
+        this.backwards = false;
+      } else if (this.accel < 0) {
+        this.sprite.scale.x = -SCALE;
+        this.backwards = true;
+      }
     }
   }
 

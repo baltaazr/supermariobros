@@ -17,22 +17,22 @@ export default class Controls {
 
     //Left
     this.left.press = () => {
-      this.player.accel.x = -ACCEL;
+      this.player.accel = -ACCEL;
     };
 
     this.left.release = () => {
       if (!this.right.isDown) {
-        this.player.accel.x = 0;
+        this.player.accel = 0;
       }
     };
 
     //Right
     this.right.press = () => {
-      this.player.accel.x = ACCEL;
+      this.player.accel = ACCEL;
     };
     this.right.release = () => {
       if (!this.left.isDown) {
-        this.player.accel.x = 0;
+        this.player.accel = 0;
       }
     };
 
