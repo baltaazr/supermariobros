@@ -6,8 +6,9 @@ import Controls from "./controls";
 
 const SCALE = Config.scale,
   BLOCK_SIZE = Config.blockSize,
-  FLOOR_Y = Config.map.floorY,
-  FRICTION_AIR = Config.physics.frictionAir;
+  FRICTION_AIR = Config.physics.frictionAir,
+  STARTING_POS = Config.player.startingPos,
+  DELTA_FRAMES = Config.player.dFrames;
 
 export default class Player {
   constructor(textures) {
@@ -18,8 +19,8 @@ export default class Player {
     this.accel = 0;
 
     this.body = Bodies.rectangle(
-      0,
-      BLOCK_SIZE * (FLOOR_Y - 1),
+      STARTING_POS.x * BLOCK_SIZE,
+      STARTING_POS.y * BLOCK_SIZE,
       BLOCK_SIZE,
       BLOCK_SIZE
     );
@@ -72,7 +73,8 @@ export default class Player {
 
   getNextMovingSprite() {
     this.dFrames += 1;
-    if (this.dFrames % 5 !== 0) return this.sprite.texture.textureCacheIds[0];
+    if (this.dFrames % DELTA_FRAMES !== 0)
+      return this.sprite.texture.textureCacheIds[0];
 
     const movingSprites = [
       "mario_moving1.png",

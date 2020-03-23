@@ -20,5 +20,14 @@ export default {
     // gravity scale proportional to window height
     gravityScale: window.innerHeight / 273200,
     frictionAir: 0.1
+  },
+  player: {
+    startingPos: { x: 2.5, y: 11.5 },
+    dFrames: 5
+  },
+  block: {
+    texturesDir: {
+      qBlock: ["q_block.png"]
+    }
   }
 };

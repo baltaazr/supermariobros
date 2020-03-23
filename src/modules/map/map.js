@@ -2,6 +2,8 @@ import { Sprite, Container } from "pixi.js";
 import { Bodies, Composite } from "matter-js";
 import Config from "config";
 
+import Block from "./block";
+
 const SCALE = Config.scale,
   BLOCK_SIZE = Config.blockSize,
   MAP_WIDTH = Config.map.width,
@@ -14,26 +16,13 @@ export default class Map {
     this.spriteContainer = new Container();
     this.spriteContainer.addChild(new Sprite(textures["map.png"]));
     this.composite = Composite.create();
+    this.blocks = [];
     Q_BLOCKS.forEach(qBlock => {
-      const newSprite = new Sprite(textures["q_block.png"]);
-      newSprite.position.set(
-        (qBlock.x * BLOCK_SIZE) / SCALE,
-        (qBlock.y * BLOCK_SIZE) / SCALE
-      );
-      this.spriteContainer.addChild(newSprite);
+      const newBlock = new Block(qBlock.x, qBlock.y, "qBlock", this);
 
-      const newBody = Bodies.rectangle(
-        qBlock.x * BLOCK_SIZE,
-        qBlock.y * BLOCK_SIZE,
-        BLOCK_SIZE,
-        BLOCK_SIZE,
-        {
-          isStatic: true
-        }
-      );
-      newBody.label = "qBlock";
-      newBody.sprite = newSprite;
-      Composite.add(this.composite, newBody);
+      this.blocks.push(newBlock);
+      this.spriteContainer.addChild(newBlock.sprite);
+      Composite.add(this.composite, newBlock.body);
     });
     this.spriteContainer.scale.set(SCALE);
 

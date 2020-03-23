@@ -50,6 +50,19 @@ const play = delta => {
   player.updatePos();
 };
 
+Events.on(engine, "collisionStart", event => {
+  var i,
+    pair,
+    length = event.pairs.length;
+  for (i = 0; i < length; i++) {
+    pair = event.pairs[i];
+    if (!(pair.bodyA.label === "qBlock" || pair.bodyB.label === "qBlock")) {
+      continue;
+    }
+    console.log(pair.bodyA, pair.bodyB);
+  }
+});
+
 engine.world.gravity.scale = GRAVITY_SCALE;
 
 Engine.run(engine);
