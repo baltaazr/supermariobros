@@ -8,7 +8,7 @@ const SCALE = Config.scale,
   BLOCK_SIZE = Config.blockSize,
   MAP_WIDTH = Config.map.width,
   FLOOR_Y = Config.map.floorY,
-  Q_BLOCKS = Config.map.qBlocks;
+  BLOCKS = Config.map.blocks;
 
 export default class Map {
   constructor(textures) {
@@ -17,8 +17,8 @@ export default class Map {
     this.spriteContainer.addChild(new Sprite(textures["map.png"]));
     this.composite = Composite.create();
     this.blocks = [];
-    Q_BLOCKS.forEach(qBlock => {
-      const newBlock = new Block(qBlock.x, qBlock.y, "qBlock", this);
+    BLOCKS.forEach(block => {
+      const newBlock = new Block(block.x, block.y, block.type, this);
 
       this.blocks.push(newBlock);
       this.spriteContainer.addChild(newBlock.sprite);

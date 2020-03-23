@@ -36,6 +36,12 @@ export default class Player {
   }
 
   update() {
+    if (
+      this.sprite.getGlobalPosition().x > window.innerWidth / 2 &&
+      !this.backwards
+    )
+      this.sprite.parent.x -=
+        this.sprite.getGlobalPosition().x - window.innerWidth / 2;
     this.updateTexture();
     this.updatePos();
   }

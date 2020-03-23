@@ -13,8 +13,8 @@ const SCALE = Config.scale,
 export default class Block {
   constructor(x, y, type, map) {
     this.map = map;
-
-    this.textures = TEXTURES_DIR[type];
+    this.type = type;
+    this.textures = TEXTURES_DIR[this.type];
     this.sprite = new Sprite(this.map.textures[this.textures[0]]);
     this.sprite.position.set(
       (x * BLOCK_SIZE) / SCALE,
@@ -38,7 +38,11 @@ export default class Block {
   }
 
   hit() {
-    this.hitBool = true;
+    if (this.type === "qBlock") {
+      this.hitBool = true;
+      this.type = "hitBlock";
+      this.textures = TEXTURES_DIR[this.type];
+    }
   }
 
   delete() {

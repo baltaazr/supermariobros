@@ -61,7 +61,6 @@ Events.on(engine, "collisionStart", event => {
       continue;
     }
     const { block } = pair.bodyA.label === "qBlock" ? pair.bodyA : pair.bodyB;
-    console.log(pair);
     block.hit();
   }
 });
