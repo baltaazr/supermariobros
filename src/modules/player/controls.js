@@ -38,10 +38,11 @@ export default class Controls {
 
     //Jump
     this.jump.press = () => {
-      Matter.Body.applyForce(this.player.body, this.player.body.position, {
-        x: 0,
-        y: -JUMP_FORCE
-      });
+      if (Math.round(this.player.body.velocity.y) === 0)
+        Matter.Body.applyForce(this.player.body, this.player.body.position, {
+          x: 0,
+          y: -JUMP_FORCE
+        });
     };
   }
 }

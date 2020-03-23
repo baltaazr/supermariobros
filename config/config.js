@@ -10,6 +10,6 @@ export default {
   },
   controls: {
     accel: 1,
-    jumpForce: 2.5
+    jumpForce: window.innerHeight / 1143.6
   }
 };

@@ -56,9 +56,9 @@ export default class Player {
       this.backwards = true;
     }
 
-    if (this.body.velocity.y < -1) {
+    if (Math.round(this.body.velocity.y) < 0) {
       this.sprite.texture = this.textures["mario_jump.png"];
-    } else if (this.body.velocity.y > 1) {
+    } else if (Math.round(this.body.velocity.y) > 0) {
       this.sprite.texture = this.textures["mario_fall.png"];
     } else {
       if (this.accel !== 0) {
