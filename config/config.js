@@ -29,6 +29,10 @@ export default {
   block: {
     texturesDir: {
       qBlock: ["q_block1.png", "q_block2.png", "q_block3.png"]
+    },
+    hit: {
+      frames: 30,
+      dPos: 1
     }
   }
 };

@@ -60,6 +60,9 @@ Events.on(engine, "collisionStart", event => {
     if (!(pair.bodyA.label === "qBlock" || pair.bodyB.label === "qBlock")) {
       continue;
     }
+    const { block } = pair.bodyA.label === "qBlock" ? pair.bodyA : pair.bodyB;
+    console.log(pair);
+    block.hit();
   }
 });
 
