@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 import { Application, Loader } from "pixi.js";
-import { Engine, World } from "matter-js";
+import { Engine, World, Events } from "matter-js";
 import Config from "config";
 
 import { Player, Enemy, Map } from "./modules";
@@ -30,12 +30,12 @@ loader.add("images/custom.json").load(() => {
   textures = loader.resources["images/custom.json"].textures;
 
   map = new Map(textures);
-  renderer.stage.addChild(map.sprite);
+  renderer.stage.addChild(map.spriteContainer);
 
   player = new Player(textures);
   renderer.stage.addChild(player.sprite);
 
-  World.add(engine.world, [player.body, map.floor]);
+  World.add(engine.world, [player.body, map.composite]);
 
   state = play;
 

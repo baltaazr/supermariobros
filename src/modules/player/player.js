@@ -24,6 +24,7 @@ export default class Player {
       BLOCK_SIZE
     );
     this.body.frictionAir = FRICTION_AIR;
+    this.body.label = "player";
 
     this.controls = new Controls(this);
 

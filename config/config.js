@@ -14,7 +14,7 @@ export default {
     accel: window.innerHeight / 1500,
     //F=ma, m=area*density, default density = 0.001
     jumpForce:
-      (window.innerHeight / 14) ** 2 * 0.001 * (window.innerHeight / 10000)
+      (window.innerHeight / 14) ** 2 * 0.001 * (window.innerHeight / 8000)
   },
   physics: {
     // gravity scale proportional to window height
