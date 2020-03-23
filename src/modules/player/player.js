@@ -6,7 +6,8 @@ import Controls from "./controls";
 
 const SCALE = Config.scale,
   BLOCK_SIZE = Config.blockSize,
-  FLOOR_Y = Config.map.floorY;
+  FLOOR_Y = Config.map.floorY,
+  FRICTION_AIR = Config.physics.frictionAir;
 
 let Sprite = PIXI.Sprite,
   Bodies = Matter.Bodies,
@@ -26,11 +27,13 @@ export default class Player {
       BLOCK_SIZE,
       BLOCK_SIZE
     );
-    this.body.friction = 0.2;
+    this.body.frictionAir = FRICTION_AIR;
 
     this.controls = new Controls(this);
 
     this.backwards = false;
+
+    console.log(this.body.mass, BLOCK_SIZE ** 2 * this.body.density);
   }
 
   updatePos() {

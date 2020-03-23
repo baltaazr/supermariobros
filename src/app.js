@@ -4,7 +4,8 @@ import Config from "config";
 
 import { Player, Enemy, Map } from "./modules";
 
-const SCALE = Config.scale;
+const SCALE = Config.scale,
+  GRAVITY_SCALE = Config.physics.gravityScale;
 
 const innerWidth = window.innerWidth;
 const innerHeight = window.innerHeight;
@@ -52,5 +53,7 @@ const gameLoop = delta => {
 const play = delta => {
   player.updatePos();
 };
+
+engine.world.gravity.scale = GRAVITY_SCALE;
 
 Engine.run(engine);

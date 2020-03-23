@@ -10,6 +10,13 @@ export default {
   },
   controls: {
     accel: 1,
-    jumpForce: window.innerHeight / 1143.6
+    //F=ma, m=area*density, default density = 0.001
+    //acceleration changes linearly with window height
+    jumpForce:
+      (window.innerHeight / 14) ** 2 * 0.001 * (window.innerHeight / 10000)
+  },
+  physics: {
+    gravityScale: 0.005,
+    frictionAir: 0.1
   }
 };
