@@ -48,6 +48,14 @@ export default class Player {
   }
 
   updateSprite() {
+    if (this.accel > 0) {
+      this.sprite.scale.x = SCALE;
+      this.backwards = false;
+    } else if (this.accel < 0) {
+      this.sprite.scale.x = -SCALE;
+      this.backwards = true;
+    }
+
     if (this.body.velocity.y < -1) {
       this.sprite.texture = this.textures["mario_jump.png"];
     } else if (this.body.velocity.y > 1) {
@@ -58,14 +66,6 @@ export default class Player {
       } else {
         this.dFrames = -1;
         this.sprite.texture = this.textures["mario_standing.png"];
-      }
-
-      if (this.accel > 0) {
-        this.sprite.scale.x = SCALE;
-        this.backwards = false;
-      } else if (this.accel < 0) {
-        this.sprite.scale.x = -SCALE;
-        this.backwards = true;
       }
     }
   }

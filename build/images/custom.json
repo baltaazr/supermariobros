@@ -1,0 +1,111 @@
+{"frames": {
+
+"brick_block.png":
+{
+	"frame": {"x":0,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+},
+"floor.png":
+{
+	"frame": {"x":16,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+},
+"map.png":
+{
+	"frame": {"x":32,"y":0,"w":3392,"h":224},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":3392,"h":224},
+	"sourceSize": {"w":3392,"h":224}
+},
+"mario_fall.png":
+{
+	"frame": {"x":3424,"y":0,"w":12,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":16},
+	"sourceSize": {"w":12,"h":16}
+},
+"mario_jump.png":
+{
+	"frame": {"x":3436,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+},
+"mario_moving1.png":
+{
+	"frame": {"x":3452,"y":0,"w":12,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":16},
+	"sourceSize": {"w":12,"h":16}
+},
+"mario_moving2.png":
+{
+	"frame": {"x":3464,"y":0,"w":11,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":11,"h":16},
+	"sourceSize": {"w":11,"h":16}
+},
+"mario_moving3.png":
+{
+	"frame": {"x":3475,"y":0,"w":15,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":15,"h":16},
+	"sourceSize": {"w":15,"h":16}
+},
+"mario_standing.png":
+{
+	"frame": {"x":3490,"y":0,"w":12,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":16},
+	"sourceSize": {"w":12,"h":16}
+},
+"mario_turn.png":
+{
+	"frame": {"x":3502,"y":0,"w":13,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":13,"h":16},
+	"sourceSize": {"w":13,"h":16}
+},
+"q_block.png":
+{
+	"frame": {"x":3515,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+},
+"underground.png":
+{
+	"frame": {"x":3531,"y":0,"w":256,"h":224},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":224},
+	"sourceSize": {"w":256,"h":224}
+}},
+"animations": {
+	"mario_moving": ["mario_moving1.png","mario_moving2.png","mario_moving3.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "custom.png",
+	"format": "RGBA8888",
+	"size": {"w":3787,"h":224},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:9ecbda8f261dbd813ee3330d29207840:7f21047495bf48809e3639de23828ef1:31d08ff5a3be2ea6ae3dc47def51455a$"
+}
+}
