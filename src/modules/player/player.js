@@ -1,5 +1,5 @@
-import * as PIXI from "pixi.js";
-import * as Matter from "matter-js";
+import { Sprite } from "pixi.js";
+import { Bodies, Body } from "matter-js";
 import Config from "config";
 
 import Controls from "./controls";
@@ -8,10 +8,6 @@ const SCALE = Config.scale,
   BLOCK_SIZE = Config.blockSize,
   FLOOR_Y = Config.map.floorY,
   FRICTION_AIR = Config.physics.frictionAir;
-
-let Sprite = PIXI.Sprite,
-  Bodies = Matter.Bodies,
-  Body = Matter.Body;
 
 export default class Player {
   constructor(textures) {
@@ -32,8 +28,6 @@ export default class Player {
     this.controls = new Controls(this);
 
     this.backwards = false;
-
-    console.log(this.body.mass, BLOCK_SIZE ** 2 * this.body.density);
   }
 
   updatePos() {

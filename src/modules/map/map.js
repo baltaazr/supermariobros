@@ -1,14 +1,11 @@
-import * as PIXI from "pixi.js";
-import * as Matter from "matter-js";
+import { Sprite } from "pixi.js";
+import { Bodies } from "matter-js";
 import Config from "config";
 
 const SCALE = Config.scale,
   BLOCK_SIZE = Config.blockSize,
   MAP_WIDTH = Config.map.width,
   FLOOR_Y = Config.map.floorY;
-
-let Sprite = PIXI.Sprite,
-  Bodies = Matter.Bodies;
 
 export default class Map {
   constructor(textures) {

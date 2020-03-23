@@ -1,4 +1,4 @@
-import * as Matter from "matter-js";
+import { Body } from "matter-js";
 import Config from "config";
 import Helpers from "../../utils/helpers";
 
@@ -39,7 +39,7 @@ export default class Controls {
     //Jump
     this.jump.press = () => {
       if (Math.round(this.player.body.velocity.y) === 0)
-        Matter.Body.applyForce(this.player.body, this.player.body.position, {
+        Body.applyForce(this.player.body, this.player.body.position, {
           x: 0,
           y: -JUMP_FORCE
         });

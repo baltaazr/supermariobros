@@ -1,20 +1,15 @@
 import * as PIXI from "pixi.js";
-import * as Matter from "matter-js";
+import { Application, Loader } from "pixi.js";
+import { Engine, World } from "matter-js";
 import Config from "config";
 
 import { Player, Enemy, Map } from "./modules";
 
-const SCALE = Config.scale,
-  GRAVITY_SCALE = Config.physics.gravityScale;
+//Constants
+const GRAVITY_SCALE = Config.physics.gravityScale;
 
 const innerWidth = window.innerWidth;
 const innerHeight = window.innerHeight;
-
-//Aliases
-let Application = PIXI.Application,
-  loader = PIXI.Loader.shared;
-let Engine = Matter.Engine,
-  World = Matter.World;
 
 //PIXI Setup
 const renderer = new Application({
@@ -24,6 +19,7 @@ const renderer = new Application({
 });
 PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
 document.body.appendChild(renderer.view);
+const loader = Loader.shared;
 
 //Matter Engine
 const engine = Engine.create();
