@@ -59,13 +59,15 @@ export default class Player {
       this.backwards = true;
     }
 
-    if (Math.round(this.body.velocity.y) < 0) {
+    if (Math.round(this.body.velocity.y) !== 0) {
       this.sprite.texture = this.textures["mario_jump.png"];
-    } else if (Math.round(this.body.velocity.y) > 0) {
-      this.sprite.texture = this.textures["mario_fall.png"];
     } else {
       if (this.accel !== 0) {
-        this.sprite.texture = this.textures[this.getNextMovingSprite()];
+        if (this.body.velocity.x * this.accel < 0) {
+          this.sprite.texture = this.textures["mario_turn.png"];
+        } else {
+          this.sprite.texture = this.textures[this.getNextMovingSprite()];
+        }
       } else {
         this.dFrames = -1;
         this.sprite.texture = this.textures["mario_standing.png"];
