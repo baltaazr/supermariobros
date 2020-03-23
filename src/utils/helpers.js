@@ -43,4 +43,16 @@ export default class Helpers {
 
     return key;
   };
+
+  static getNextTexture(textures, curSprite) {
+    const idx = textures.indexOf(curSprite);
+
+    if (idx === -1) {
+      return textures[0];
+    }
+
+    if (idx === textures.length - 1) {
+      return textures[0];
+    } else return textures[idx + 1];
+  }
 }

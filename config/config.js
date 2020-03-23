@@ -7,7 +7,8 @@ export default {
     height: 14,
     width: 212,
     floorY: 12.5,
-    qBlocks: [{ x: 17, y: 8.5 }]
+    qBlocks: [{ x: 17, y: 8.5 }],
+    dFrames: 10
   },
   controls: {
     //acceleration changes linearly with window height
@@ -27,7 +28,7 @@ export default {
   },
   block: {
     texturesDir: {
-      qBlock: ["q_block.png"]
+      qBlock: ["q_block1.png", "q_block2.png", "q_block3.png"]
     }
   }
 };

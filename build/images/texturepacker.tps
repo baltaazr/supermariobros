@@ -182,9 +182,15 @@
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
             <key type="filename">brick_block.png</key>
+            <key type="filename">coin1.png</key>
+            <key type="filename">coin2.png</key>
+            <key type="filename">coin3.png</key>
             <key type="filename">floor.png</key>
+            <key type="filename">hit_block.png</key>
             <key type="filename">mario_jump.png</key>
-            <key type="filename">q_block.png</key>
+            <key type="filename">q_block1.png</key>
+            <key type="filename">q_block2.png</key>
+            <key type="filename">q_block3.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -303,9 +309,15 @@
             <filename>mario_moving3.png</filename>
             <filename>mario_standing.png</filename>
             <filename>mario_turn.png</filename>
-            <filename>q_block.png</filename>
             <filename>underground.png</filename>
             <filename>map.png</filename>
+            <filename>q_block1.png</filename>
+            <filename>q_block2.png</filename>
+            <filename>q_block3.png</filename>
+            <filename>hit_block.png</filename>
+            <filename>coin1.png</filename>
+            <filename>coin2.png</filename>
+            <filename>coin3.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -39,4 +39,10 @@ export default class Map {
       )
     );
   }
+
+  update() {
+    this.blocks.forEach(block => {
+      block.update();
+    });
+  }
 }

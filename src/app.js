@@ -47,7 +47,8 @@ const gameLoop = delta => {
 };
 
 const play = delta => {
-  player.updatePos();
+  player.update();
+  map.update();
 };
 
 Events.on(engine, "collisionStart", event => {
@@ -59,7 +60,6 @@ Events.on(engine, "collisionStart", event => {
     if (!(pair.bodyA.label === "qBlock" || pair.bodyB.label === "qBlock")) {
       continue;
     }
-    console.log(pair.bodyA, pair.bodyB);
   }
 });
 

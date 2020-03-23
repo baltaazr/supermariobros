@@ -1,6 +1,7 @@
 import { Sprite } from "pixi.js";
 import { Bodies, Body } from "matter-js";
 import Config from "config";
+import Helpers from "../../utils/helpers";
 
 import Controls from "./controls";
 
@@ -30,11 +31,16 @@ export default class Player {
     this.controls = new Controls(this);
 
     this.backwards = false;
+
+    this.dFrames = -1;
+  }
+
+  update() {
+    this.updateTexture();
+    this.updatePos();
   }
 
   updatePos() {
-    this.updateSprite();
-
     this.sprite.x = this.body.position.x + (this.backwards ? BLOCK_SIZE : 0);
     this.sprite.y = this.body.position.y;
 
@@ -46,7 +52,7 @@ export default class Player {
     Body.setAngularVelocity(this.body, 0);
   }
 
-  updateSprite() {
+  updateTexture() {
     if (this.accel > 0) {
       this.sprite.scale.x = SCALE;
       this.backwards = false;
@@ -62,7 +68,7 @@ export default class Player {
         if (this.body.velocity.x * this.accel < 0) {
           this.sprite.texture = this.textures["mario_turn.png"];
         } else {
-          this.sprite.texture = this.textures[this.getNextMovingSprite()];
+          this.sprite.texture = this.textures[this.getNextMovingTexture()];
         }
       } else {
         this.dFrames = -1;
@@ -71,25 +77,20 @@ export default class Player {
     }
   }
 
-  getNextMovingSprite() {
+  getNextMovingTexture() {
     this.dFrames += 1;
     if (this.dFrames % DELTA_FRAMES !== 0)
       return this.sprite.texture.textureCacheIds[0];
 
-    const movingSprites = [
+    const movingTextures = [
       "mario_moving1.png",
       "mario_moving2.png",
       "mario_moving3.png"
     ];
 
-    const idx = movingSprites.indexOf(this.sprite.texture.textureCacheIds[0]);
-
-    if (idx === -1) {
-      return movingSprites[0];
-    }
-
-    if (idx === movingSprites.length - 1) {
-      return movingSprites[0];
-    } else return movingSprites[idx + 1];
+    return Helpers.getNextTexture(
+      movingTextures,
+      this.sprite.texture.textureCacheIds[0]
+    );
   }
 }
