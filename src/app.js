@@ -27,7 +27,7 @@ document.body.appendChild(renderer.view);
 //Matter Engine
 const engine = Engine.create();
 
-// Game Setup
+//Game Setup
 let player, enemy, map, textures, state;
 loader.add("images/custom.json").load(() => {
   textures = loader.resources["images/custom.json"].textures;

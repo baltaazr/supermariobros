@@ -5,10 +5,12 @@ import Config from "config";
 import Controls from "./controls";
 
 const SCALE = Config.scale,
-  BLOCK_SIZE = Config.blockSize;
+  BLOCK_SIZE = Config.blockSize,
+  FLOOR_Y = Config.map.floorY;
 
 let Sprite = PIXI.Sprite,
-  Bodies = Matter.Bodies;
+  Bodies = Matter.Bodies,
+  Body = Matter.Body;
 
 export default class Player {
   constructor(textures) {
@@ -18,7 +20,13 @@ export default class Player {
 
     this.accel = { x: 0, y: 0 };
 
-    this.body = Bodies.rectangle(0, 0, BLOCK_SIZE, BLOCK_SIZE);
+    this.body = Bodies.rectangle(
+      0,
+      BLOCK_SIZE * (FLOOR_Y - 1),
+      BLOCK_SIZE,
+      BLOCK_SIZE
+    );
+    this.body.frictionAir = 0.1;
 
     this.controls = new Controls(this);
   }
@@ -27,9 +35,11 @@ export default class Player {
     this.sprite.x = this.body.position.x;
     this.sprite.y = this.body.position.y;
 
-    Matter.Body.setVelocity(this.body, {
+    Body.setVelocity(this.body, {
       x: (this.body.velocity.x += this.accel.x),
       y: (this.body.velocity.y += this.accel.y)
     });
+
+    Body.setAngularVelocity(this.body, 0);
   }
 }
