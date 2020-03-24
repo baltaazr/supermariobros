@@ -13,7 +13,8 @@ export default {
       { x: 21, y: 8.5, type: "qBlock" },
       { x: 22, y: 8.5, type: "brickBlock" },
       { x: 23, y: 8.5, type: "qBlock" },
-      { x: 24, y: 8.5, type: "brickBlock" }
+      { x: 24, y: 8.5, type: "brickBlock" },
+      { x: 22, y: 5.5, type: "qBlock" }
     ],
     dFrames: 10
   },
@@ -25,7 +26,7 @@ export default {
     accel: window.innerHeight / 1500,
     //F=ma, m=area*density, default density = 0.001
     jumpForce:
-      (window.innerHeight / 14) ** 2 * 0.001 * (window.innerHeight / 8000)
+      (window.innerHeight / 14) ** 2 * 0.001 * (window.innerHeight / 5000)
   },
   player: {
     startingPos: { x: 2.5, y: 11.5 },
@@ -39,7 +40,9 @@ export default {
     },
     hit: {
       frames: 30,
-      dPos: 1
+      dPos: 1,
+      //Margin of error in pixels, check which side of the block was hit
+      moe: 100
     }
   }
 };

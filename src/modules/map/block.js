@@ -8,7 +8,8 @@ const SCALE = Config.scale,
   TEXTURES_DIR = Config.block.texturesDir,
   DELTA_FRAMES = Config.map.dFrames,
   HIT_FRAMES = Config.block.hit.frames,
-  HIT_DELTA_POS = Config.block.hit.dPos;
+  HIT_DELTA_POS = Config.block.hit.dPos,
+  HIT_MOE = Config.block.hit.moe;
 
 export default class Block {
   constructor(x, y, type, map) {
@@ -37,11 +38,17 @@ export default class Block {
     this.hitDFrames = 0;
   }
 
-  hit() {
-    if (this.type === "qBlock") {
+  hit(player) {
+    if (
+      Math.abs(player.body.position.y - this.body.position.y - BLOCK_SIZE) <
+        HIT_MOE &&
+      Math.abs(player.body.position.x - this.body.position.x) < HIT_MOE
+    ) {
       this.hitBool = true;
-      this.type = "hitBlock";
-      this.textures = TEXTURES_DIR[this.type];
+      if (this.type === "qBlock") {
+        this.type = "hitBlock";
+        this.textures = TEXTURES_DIR[this.type];
+      }
     }
   }
 

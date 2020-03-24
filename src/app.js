@@ -57,11 +57,17 @@ Events.on(engine, "collisionStart", event => {
     length = event.pairs.length;
   for (i = 0; i < length; i++) {
     pair = event.pairs[i];
-    if (!(pair.bodyA.label === "qBlock" || pair.bodyB.label === "qBlock")) {
+    if (
+      !(
+        pair.bodyA.label.indexOf("Block") !== -1 ||
+        pair.bodyB.label.indexOf("Block") !== -1
+      )
+    ) {
       continue;
     }
-    const { block } = pair.bodyA.label === "qBlock" ? pair.bodyA : pair.bodyB;
-    block.hit();
+    const { block } =
+      pair.bodyA.label.indexOf("Block") !== -1 ? pair.bodyA : pair.bodyB;
+    block.hit(player);
   }
 });
 
