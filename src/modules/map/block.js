@@ -41,8 +41,8 @@ export default class Block {
   hit(player) {
     if (
       Math.abs(player.body.position.y - this.body.position.y - BLOCK_SIZE) <
-        HIT_MOE &&
-      Math.abs(player.body.position.x - this.body.position.x) < HIT_MOE
+        HIT_MOE.y &&
+      Math.abs(player.body.position.x - this.body.position.x) < HIT_MOE.x
     ) {
       this.hitBool = true;
       if (this.type === "qBlock") {

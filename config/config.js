@@ -42,7 +42,10 @@ export default {
       frames: 30,
       dPos: 1,
       //Margin of error in pixels, check which side of the block was hit
-      moe: 100
+      moe: {
+        x: (window.innerHeight / 14) * (3 / 4),
+        y: window.innerHeight / 14 / 2
+      }
     }
   }
 };
