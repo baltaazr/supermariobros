@@ -36,15 +36,9 @@ export default class Map {
 
     Composite.add(
       this.composite,
-      Bodies.rectangle(
-        0,
-        BLOCK_SIZE * FLOOR_Y,
-        BLOCK_SIZE * MAP_WIDTH,
-        BLOCK_SIZE,
-        {
-          isStatic: true
-        }
-      )
+      Bodies.rectangle(0, FLOOR_Y, MAP_WIDTH, 1, {
+        isStatic: true
+      })
     );
   }
 

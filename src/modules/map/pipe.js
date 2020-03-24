@@ -44,7 +44,7 @@ export default class Pipe {
 
     Composite.add(
       this.composite,
-      Bodies.rectangle(x * BLOCK_SIZE, y * BLOCK_SIZE, 1, h * BLOCK_SIZE, {
+      Bodies.rectangle(x, y, 2, h, {
         isStatic: true
       })
     );

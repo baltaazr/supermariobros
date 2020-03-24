@@ -23,15 +23,9 @@ export default class Block {
       (y * BLOCK_SIZE) / SCALE
     );
 
-    this.body = Bodies.rectangle(
-      x * BLOCK_SIZE,
-      y * BLOCK_SIZE,
-      BLOCK_SIZE,
-      BLOCK_SIZE,
-      {
-        isStatic: true
-      }
-    );
+    this.body = Bodies.rectangle(x, y, 1, 1, {
+      isStatic: true
+    });
     this.body.label = type;
     this.body.block = this;
 
@@ -72,8 +66,8 @@ export default class Block {
   }
 
   updatePos() {
-    this.sprite.x = this.body.position.x / SCALE;
-    this.sprite.y = this.body.position.y / SCALE;
+    this.sprite.x = this.body.position.x * (BLOCK_SIZE / SCALE);
+    this.sprite.y = this.body.position.y * (BLOCK_SIZE / SCALE);
 
     if (this.hitBool) {
       this.hitDFrames += 1;

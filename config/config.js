@@ -20,14 +20,10 @@ export default {
     dFrames: 10
   },
   physics: {
-    // gravity scale proportional to window height
-    gravityScale: window.innerHeight / 273200,
-    frictionAir: 0.1,
-    //acceleration changes linearly with window height
-    accel: window.innerHeight / 1500,
-    //F=ma, m=area*density, default density = 0.001
-    jumpForce:
-      (window.innerHeight / 14) ** 2 * 0.001 * (window.innerHeight / 5000)
+    gravityScale: 0.001,
+    frictionAir: 0.5,
+    accel: 0.1,
+    jumpForce: 0.00001
   },
   player: {
     startingPos: { x: 2.5, y: 11.5 },
@@ -42,10 +38,9 @@ export default {
     hit: {
       frames: 30,
       dPos: 1,
-      //Margin of error in pixels, check which side of the block was hit
       moe: {
-        x: (window.innerHeight / 14) * (3 / 4),
-        y: window.innerHeight / 14 / 2
+        x: 150,
+        y: 100
       }
     }
   }

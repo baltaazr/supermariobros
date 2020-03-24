@@ -19,12 +19,7 @@ export default class Player {
 
     this.accel = 0;
 
-    this.body = Bodies.rectangle(
-      STARTING_POS.x * BLOCK_SIZE,
-      STARTING_POS.y * BLOCK_SIZE,
-      BLOCK_SIZE,
-      BLOCK_SIZE
-    );
+    this.body = Bodies.rectangle(STARTING_POS.x, STARTING_POS.y, 1, 1);
     this.body.frictionAir = FRICTION_AIR;
     this.body.label = "player";
 
@@ -47,8 +42,9 @@ export default class Player {
   }
 
   updatePos() {
-    this.sprite.x = this.body.position.x + (this.backwards ? BLOCK_SIZE : 0);
-    this.sprite.y = this.body.position.y;
+    this.sprite.x =
+      (this.body.position.x + (this.backwards ? 1 : 0)) * BLOCK_SIZE;
+    this.sprite.y = this.body.position.y * BLOCK_SIZE;
 
     Body.setVelocity(this.body, {
       x: (this.body.velocity.x += this.accel),
