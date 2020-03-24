@@ -8,7 +8,8 @@ const SCALE = Config.scale,
   BLOCK_SIZE = Config.blockSize,
   MAP_WIDTH = Config.map.width,
   FLOOR_Y = Config.map.floorY,
-  BLOCKS = Config.map.blocks;
+  BLOCKS = Config.map.blocks,
+  PIPES = Config.map.pipes;
 
 export default class Map {
   constructor(textures) {

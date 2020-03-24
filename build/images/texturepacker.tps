@@ -282,6 +282,52 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">pipe.png</key>
+            <key type="filename">pipe_up.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,4,16,8</rect>
+                <key>scale9Paddings</key>
+                <rect>8,4,16,8</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">pipe_left.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>12,8,24,16</rect>
+                <key>scale9Paddings</key>
+                <rect>12,8,24,16</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">pipe_right.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,8,16,16</rect>
+                <key>scale9Paddings</key>
+                <rect>8,8,16,16</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">underground.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -318,6 +364,10 @@
             <filename>coin1.png</filename>
             <filename>coin2.png</filename>
             <filename>coin3.png</filename>
+            <filename>pipe.png</filename>
+            <filename>pipe_left.png</filename>
+            <filename>pipe_up.png</filename>
+            <filename>pipe_right.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -16,6 +16,7 @@ export default {
       { x: 24, y: 8.5, type: "brickBlock" },
       { x: 22, y: 5.5, type: "qBlock" }
     ],
+    pipes: [{ x: 26, y: 11.5, dir: "up" }],
     dFrames: 10
   },
   physics: {

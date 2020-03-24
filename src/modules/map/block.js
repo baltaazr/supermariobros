@@ -15,6 +15,7 @@ export default class Block {
   constructor(x, y, type, map) {
     this.map = map;
     this.type = type;
+
     this.textures = TEXTURES_DIR[this.type];
     this.sprite = new Sprite(this.map.textures[this.textures[0]]);
     this.sprite.position.set(
