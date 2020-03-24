@@ -16,19 +16,35 @@ export default class Pipe {
     switch (dir) {
       case "up":
         sprite = new Sprite(this.map.textures["pipe_up.png"]);
-        sprite.position.set(x, y + h);
+        sprite.position.set(
+          x * (BLOCK_SIZE / SCALE),
+          (y - h) * (BLOCK_SIZE / SCALE)
+        );
+        break;
       case "left":
         sprite = new Sprite(this.map.textures["pipe_left.png"]);
-        sprite.position.set(x - 1, y);
+        sprite.position.set(
+          (x - 1) * (BLOCK_SIZE / SCALE),
+          y * (BLOCK_SIZE / SCALE)
+        );
+        break;
+      default:
+        break;
     }
     this.container.addChild(sprite);
 
-    for (let i = 0; i < h; i++)
-      this.container.addChild(new Sprite("pipe.png").position.set(x, y + i));
+    for (let i = 0; i < h; i++) {
+      sprite = new Sprite(this.map.textures["pipe.png"]);
+      sprite.position.set(
+        x * (BLOCK_SIZE / SCALE),
+        (y - i) * (BLOCK_SIZE / SCALE)
+      );
+      this.container.addChild(sprite);
+    }
 
     Composite.add(
       this.composite,
-      Bodies.rectangle(x * BLOCK_SIZE, y * BLOCKSIZE, 1, h * BLOCKSIZE, {
+      Bodies.rectangle(x * BLOCK_SIZE, y * BLOCK_SIZE, 1, h * BLOCK_SIZE, {
         isStatic: true
       })
     );

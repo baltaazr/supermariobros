@@ -3,6 +3,7 @@ import { Bodies, Composite } from "matter-js";
 import Config from "config";
 
 import Block from "./block";
+import Pipe from "./pipe";
 
 const SCALE = Config.scale,
   BLOCK_SIZE = Config.blockSize,
@@ -24,6 +25,12 @@ export default class Map {
       this.blocks.push(newBlock);
       this.spriteContainer.addChild(newBlock.sprite);
       Composite.add(this.composite, newBlock.body);
+    });
+    PIPES.forEach(pipe => {
+      const newPipe = new Pipe(pipe.x, pipe.y, pipe.h, pipe.dir, this);
+
+      this.spriteContainer.addChild(newPipe.container);
+      Composite.add(this.composite, newPipe.composite);
     });
     this.spriteContainer.scale.set(SCALE);
 
