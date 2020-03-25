@@ -1,13 +1,17 @@
 import * as PIXI from "pixi.js";
 import { Application, Loader } from "pixi.js";
-import { Engine, World, Events } from "matter-js";
+import { Engine, World, Events, Composite } from "matter-js";
 import Config from "config";
 
 import { Player, Enemy, Map } from "./modules";
 
 //Constants
-const GRAVITY_SCALE = Config.physics.gravityScale;
-const JUMP_MOE = Config.physics.jump.moe;
+const GRAVITY_SCALE = Config.physics.gravityScale,
+  JUMP_MOE = Config.physics.jump.moe,
+  FRICTION = Config.physics.friction,
+  FRICTION_AIR = Config.physics.frictionAir,
+  FRICTION_STATIC = Config.physics.frictionStatic,
+  SLOP = Config.physics.slop;
 
 const innerWidth = window.innerWidth;
 const innerHeight = window.innerHeight;
@@ -37,6 +41,16 @@ loader.add("images/custom.json").load(() => {
   renderer.stage.addChild(player.sprite);
 
   World.add(engine.world, [player.body, map.composite]);
+
+  //Applying all physics constants to all bodies
+  const bodies = Composite.allBodies(engine.world);
+  for (let i = 0; i < bodies.length; i++) {
+    const body = bodies[i];
+    body.friction = FRICTION;
+    body.frictionAir = FRICTION_AIR;
+    body.frictionStatic = FRICTION_STATIC;
+    body.slop = SLOP;
+  }
 
   state = play;
 

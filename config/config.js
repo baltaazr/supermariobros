@@ -51,8 +51,9 @@ export default {
   },
   physics: {
     gravityScale: 0.0001,
-    frictionAir: 0.1,
     friction: 0,
+    frictionAir: 0.1,
+    frictionStatic: 0,
     accel: 0.02,
     jump: {
       force: 0.0000025,
