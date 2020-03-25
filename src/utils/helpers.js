@@ -97,6 +97,7 @@ export default class Helpers {
       }
 
       updatePos() {
+        //Account for the width of player
         this.sprite.x =
           (this.body.position.x +
             (this.backwards ? 0.5 + this.w / 2 : 0.5 - this.w / 2)) *
@@ -104,7 +105,6 @@ export default class Helpers {
         this.sprite.y = this.body.position.y * BLOCK_SIZE;
 
         if (!this.body.isStatic) {
-          //Account for the width of player
           Body.setVelocity(this.body, {
             x: (this.body.velocity.x += this.accel),
             y: this.body.velocity.y

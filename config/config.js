@@ -77,6 +77,7 @@ export default {
     hit: {
       frames: 30,
       dPos: 0.01,
+      //Margin of error of hit to detect whether or not it was hit from the bottom and near the same x-axis
       moe: {
         x: 3 / 4,
         y: 3 / 4
@@ -100,6 +101,6 @@ export default {
       ]
     },
     dFrames: 5,
-    accel: 0.003
+    vel: 0.1
   }
 };
