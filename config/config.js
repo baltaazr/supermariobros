@@ -9,7 +9,9 @@ export default {
     floorY: 12.5,
     floors: [
       { x: 0, w: 69 },
-      { x: 71, w: 15 }
+      { x: 71, w: 15 },
+      { x: 89, w: 64 },
+      { x: 155, w: 57 }
     ],
     blocks: [
       { x: 17, y: 8.5, type: "qBlock" },
