@@ -13,7 +13,7 @@ const TEXTURES_DIR = Config.block.texturesDir,
   GameObject = Helpers.GameObject();
 
 export default class Block extends GameObject {
-  constructor(x, y, type, map) {
+  constructor(x, y, type, map, item) {
     super(
       x,
       y,
@@ -26,6 +26,7 @@ export default class Block extends GameObject {
       DELTA_FRAMES
     );
 
+    this.item = item;
     this.map = map;
     this.type = type;
     this.hitDFrames = 0;
@@ -41,7 +42,8 @@ export default class Block extends GameObject {
       if (this.type === "qBlock") {
         this.type = "hitBlock";
         this.textures = TEXTURES_DIR[this.type];
-        this.spawnPowerup("mushroom");
+        if (this.item === "coin") {
+        } else this.spawnPowerup(this.item);
       }
     }
   }

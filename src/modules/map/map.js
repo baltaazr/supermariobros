@@ -38,7 +38,13 @@ export default class Map {
     this.blocks = [];
     this.powerups = [];
     BLOCKS.forEach(block => {
-      const newBlock = new Block(block.x, block.y, block.type, this);
+      const newBlock = new Block(
+        block.x,
+        block.y,
+        block.type,
+        this,
+        block.item
+      );
 
       this.blocks.push(newBlock);
       this.spriteContainer.addChild(newBlock.sprite);

@@ -13,14 +13,15 @@ export default {
       { x: 89, w: 64 },
       { x: 155, w: 57 }
     ],
+    //All qBlocks have to have an item property
     blocks: [
-      { x: 17, y: 8.5, type: "qBlock" },
+      { x: 17, y: 8.5, type: "qBlock", item: "coin" },
       { x: 20, y: 8.5, type: "brickBlock" },
-      { x: 21, y: 8.5, type: "qBlock" },
+      { x: 21, y: 8.5, type: "qBlock", item: "mushroom" },
       { x: 22, y: 8.5, type: "brickBlock" },
-      { x: 23, y: 8.5, type: "qBlock" },
+      { x: 23, y: 8.5, type: "qBlock", item: "coin" },
       { x: 24, y: 8.5, type: "brickBlock" },
-      { x: 22, y: 5.5, type: "qBlock" },
+      { x: 22, y: 5.5, type: "qBlock", item: "coin" },
       { x: 134, y: 11.5, type: "block" },
       { x: 135, y: 11.5, type: "block" },
       { x: 136, y: 11.5, type: "block" },
