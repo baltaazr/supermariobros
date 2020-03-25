@@ -10,7 +10,8 @@ const SCALE = Config.scale,
   FLOOR_Y = Config.map.floorY,
   FLOORS = Config.map.floors,
   BLOCKS = Config.map.blocks,
-  PIPES = Config.map.pipes;
+  PIPES = Config.map.pipes,
+  SLOP = Config.physics.slop;
 
 export default class Map {
   constructor(textures) {
@@ -28,7 +29,8 @@ export default class Map {
           floor.w,
           1.5,
           {
-            isStatic: true
+            isStatic: true,
+            slop: SLOP
           }
         )
       );

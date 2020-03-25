@@ -8,8 +8,9 @@ import Controls from "./controls";
 const SCALE = Config.scale,
   BLOCK_SIZE = Config.blockSize,
   WIDTH = Config.player.width,
-  FRICTION_AIR = Config.physics.frictionAir,
   FRICTION = Config.physics.friction,
+  FRICTION_AIR = Config.physics.frictionAir,
+  SLOP = Config.physics.slop,
   STARTING_POS = Config.player.startingPos,
   DELTA_FRAMES = Config.player.dFrames;
 
@@ -21,10 +22,12 @@ export default class Player {
 
     this.accel = 0;
 
-    this.body = Bodies.rectangle(STARTING_POS.x, STARTING_POS.y, WIDTH, 1);
-    this.body.frictionAir = FRICTION_AIR;
-    this.body.friction = FRICTION;
-    this.body.label = "player";
+    this.body = Bodies.rectangle(STARTING_POS.x, STARTING_POS.y, WIDTH, 1, {
+      friction: FRICTION,
+      frictionAir: FRICTION_AIR,
+      slop: SLOP,
+      label: "player"
+    });
 
     this.controls = new Controls(this);
 

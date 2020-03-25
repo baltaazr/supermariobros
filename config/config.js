@@ -55,10 +55,12 @@ export default {
     friction: 0,
     accel: 0.02,
     jump: {
-      force: 0.000003,
+      force: 0.0000025,
       //Margin of error of velocity y to detect whether player is jumping or not
       moe: 0.1
-    }
+    },
+    //Amount a body can sink into another body
+    slop: 0
   },
   player: {
     startingPos: { x: 2.5, y: 11.5 },
@@ -77,7 +79,7 @@ export default {
       dPos: 0.01,
       moe: {
         x: 3 / 4,
-        y: 1 / 2
+        y: 3 / 4
       }
     }
   },

@@ -9,7 +9,8 @@ const SCALE = Config.scale,
   DELTA_FRAMES = Config.map.dFrames,
   HIT_FRAMES = Config.block.hit.frames,
   HIT_DELTA_POS = Config.block.hit.dPos,
-  HIT_MOE = Config.block.hit.moe;
+  HIT_MOE = Config.block.hit.moe,
+  SLOP = Config.physics.slop;
 
 export default class Block {
   constructor(x, y, type, map) {
@@ -24,10 +25,11 @@ export default class Block {
     );
 
     this.body = Bodies.rectangle(x, y, 1, 1, {
-      isStatic: true
+      isStatic: true,
+      slop: SLOP,
+      label: type,
+      block: this
     });
-    this.body.label = type;
-    this.body.block = this;
 
     this.dFrames = -1;
     this.hitDFrames = 0;
