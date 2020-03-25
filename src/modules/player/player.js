@@ -7,6 +7,7 @@ import Controls from "./controls";
 
 const SCALE = Config.scale,
   BLOCK_SIZE = Config.blockSize,
+  WIDTH = Config.player.width,
   FRICTION_AIR = Config.physics.frictionAir,
   FRICTION = Config.physics.friction,
   STARTING_POS = Config.player.startingPos,
@@ -20,7 +21,7 @@ export default class Player {
 
     this.accel = 0;
 
-    this.body = Bodies.rectangle(STARTING_POS.x, STARTING_POS.y, 1, 1);
+    this.body = Bodies.rectangle(STARTING_POS.x, STARTING_POS.y, WIDTH, 1);
     this.body.frictionAir = FRICTION_AIR;
     this.body.friction = FRICTION;
     this.body.label = "player";
@@ -46,8 +47,11 @@ export default class Player {
   }
 
   updatePos() {
+    //Account for the width of player
     this.sprite.x =
-      (this.body.position.x + (this.backwards ? 1 : 0)) * BLOCK_SIZE;
+      (this.body.position.x +
+        (this.backwards ? 0.5 + WIDTH / 2 : 0.5 - WIDTH / 2)) *
+      BLOCK_SIZE;
     this.sprite.y = this.body.position.y * BLOCK_SIZE;
 
     Body.setVelocity(this.body, {

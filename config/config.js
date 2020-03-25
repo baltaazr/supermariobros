@@ -62,7 +62,8 @@ export default {
   },
   player: {
     startingPos: { x: 2.5, y: 11.5 },
-    dFrames: 5
+    dFrames: 5,
+    width: 12 / 16
   },
   block: {
     texturesDir: {
@@ -81,6 +82,6 @@ export default {
     }
   },
   pipe: {
-    width: 1.5
+    width: 2
   }
 };
