@@ -16,7 +16,9 @@ export default class Map {
   constructor(textures) {
     this.textures = textures;
     this.spriteContainer = new Container();
-    this.spriteContainer.addChild(new Sprite(textures["map.png"]));
+    const backgroundSprite = new Sprite(textures["map.png"]);
+    backgroundSprite.scale.set(SCALE);
+    this.spriteContainer.addChild(backgroundSprite);
     this.composite = Composite.create();
 
     FLOORS.forEach(floor => {
@@ -48,7 +50,6 @@ export default class Map {
       this.spriteContainer.addChild(newPipe.container);
       Composite.add(this.composite, newPipe.composite);
     });
-    this.spriteContainer.scale.set(SCALE);
   }
 
   update() {

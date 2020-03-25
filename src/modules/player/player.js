@@ -1,34 +1,31 @@
-import { Sprite } from "pixi.js";
-import { Bodies, Body } from "matter-js";
 import Config from "config";
 import Helpers from "../../utils/helpers";
 
 import Controls from "./controls";
 
 const SCALE = Config.scale,
-  BLOCK_SIZE = Config.blockSize,
   WIDTH = Config.player.width,
   STARTING_POS = Config.player.startingPos,
-  DELTA_FRAMES = Config.player.dFrames;
+  DELTA_FRAMES = Config.player.dFrames,
+  GameObject = Helpers.GameObject();
 
-export default class Player {
+export default class Player extends GameObject {
   constructor(textures) {
-    this.textures = textures;
-    this.sprite = new Sprite(textures["mario_standing.png"]);
-    this.sprite.scale.set(SCALE);
-
-    this.accel = 0;
-
-    this.body = Bodies.rectangle(STARTING_POS.x, STARTING_POS.y, WIDTH, 1, {
-      label: "player"
-    });
+    super(
+      STARTING_POS.x,
+      STARTING_POS.y,
+      WIDTH,
+      1,
+      textures,
+      textures["mario_standing.png"],
+      "player",
+      false,
+      DELTA_FRAMES
+    );
 
     this.controls = new Controls(this);
-
+    this.accel = 0;
     this.backwards = false;
-
-    this.dFrames = -1;
-
     this.onGround = true;
   }
 
@@ -39,24 +36,7 @@ export default class Player {
     )
       this.sprite.parent.x -=
         this.sprite.getGlobalPosition().x - window.innerWidth / 2;
-    this.updateTexture();
-    this.updatePos();
-  }
-
-  updatePos() {
-    //Account for the width of player
-    this.sprite.x =
-      (this.body.position.x +
-        (this.backwards ? 0.5 + WIDTH / 2 : 0.5 - WIDTH / 2)) *
-      BLOCK_SIZE;
-    this.sprite.y = this.body.position.y * BLOCK_SIZE;
-
-    Body.setVelocity(this.body, {
-      x: (this.body.velocity.x += this.accel),
-      y: this.body.velocity.y
-    });
-
-    Body.setAngularVelocity(this.body, 0);
+    super.update();
   }
 
   updateTexture() {
@@ -75,29 +55,18 @@ export default class Player {
         if (this.body.velocity.x * this.accel < 0) {
           this.sprite.texture = this.textures["mario_turn.png"];
         } else {
-          this.sprite.texture = this.textures[this.getNextMovingTexture()];
+          if (this.frames % this.dFrames === 0)
+            this.sprite.texture = this.textures[
+              Helpers.getNextTexture(
+                ["mario_moving1.png", "mario_moving2.png", "mario_moving3.png"],
+                this.sprite.texture.textureCacheIds[0]
+              )
+            ];
         }
       } else {
-        this.dFrames = -1;
+        this.frames = 0;
         this.sprite.texture = this.textures["mario_standing.png"];
       }
     }
-  }
-
-  getNextMovingTexture() {
-    this.dFrames += 1;
-    if (this.dFrames % DELTA_FRAMES !== 0)
-      return this.sprite.texture.textureCacheIds[0];
-
-    const movingTextures = [
-      "mario_moving1.png",
-      "mario_moving2.png",
-      "mario_moving3.png"
-    ];
-
-    return Helpers.getNextTexture(
-      movingTextures,
-      this.sprite.texture.textureCacheIds[0]
-    );
   }
 }

@@ -5,33 +5,29 @@ import Helpers from "../../utils/helpers";
 
 import Powerup from "../powerup/powerup";
 
-const SCALE = Config.scale,
-  BLOCK_SIZE = Config.blockSize,
-  TEXTURES_DIR = Config.block.texturesDir,
+const TEXTURES_DIR = Config.block.texturesDir,
   DELTA_FRAMES = Config.block.dFrames,
   HIT_FRAMES = Config.block.hit.frames,
   HIT_DELTA_POS = Config.block.hit.dPos,
-  HIT_MOE = Config.block.hit.moe;
+  HIT_MOE = Config.block.hit.moe,
+  GameObject = Helpers.GameObject();
 
-export default class Block {
+export default class Block extends GameObject {
   constructor(x, y, type, map) {
-    this.map = map;
-    this.type = type;
-
-    this.textures = TEXTURES_DIR[this.type];
-    this.sprite = new Sprite(this.map.textures[this.textures[0]]);
-    this.sprite.position.set(
-      (x * BLOCK_SIZE) / SCALE,
-      (y * BLOCK_SIZE) / SCALE
+    super(
+      x,
+      y,
+      1,
+      1,
+      TEXTURES_DIR[type],
+      map.textures[TEXTURES_DIR[type][0]],
+      "block",
+      true,
+      DELTA_FRAMES
     );
 
-    this.body = Bodies.rectangle(x, y, 1, 1, {
-      isStatic: true,
-      label: "block",
-      block: this
-    });
-
-    this.dFrames = -1;
+    this.map = map;
+    this.type = type;
     this.hitDFrames = 0;
   }
 
@@ -56,26 +52,8 @@ export default class Block {
     this.map.blocks.splice(this.map.blocks.indexOf(this), 1);
   }
 
-  update() {
-    this.updateTexture();
-    this.updatePos();
-  }
-
-  updateTexture() {
-    this.dFrames += 1;
-    if (this.dFrames % DELTA_FRAMES !== 0)
-      return this.sprite.texture.textureCacheIds[0];
-    this.sprite.texture = this.map.textures[
-      Helpers.getNextTexture(
-        this.textures,
-        this.sprite.texture.textureCacheIds[0]
-      )
-    ];
-  }
-
   updatePos() {
-    this.sprite.x = this.body.position.x * (BLOCK_SIZE / SCALE);
-    this.sprite.y = this.body.position.y * (BLOCK_SIZE / SCALE);
+    super.updatePos();
 
     if (this.hitBool) {
       this.hitDFrames += 1;

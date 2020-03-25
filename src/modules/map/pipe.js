@@ -17,17 +17,13 @@ export default class Pipe {
     switch (dir) {
       case "up":
         sprite = new Sprite(this.map.textures["pipe_up.png"]);
-        sprite.position.set(
-          x * (BLOCK_SIZE / SCALE),
-          (y - h) * (BLOCK_SIZE / SCALE)
-        );
+        sprite.position.set(x * BLOCK_SIZE, (y - h) * BLOCK_SIZE);
+        sprite.scale.set(SCALE);
         break;
       case "left":
         sprite = new Sprite(this.map.textures["pipe_left.png"]);
-        sprite.position.set(
-          (x - 1) * (BLOCK_SIZE / SCALE),
-          y * (BLOCK_SIZE / SCALE)
-        );
+        sprite.position.set((x - 1) * BLOCK_SIZE, y * BLOCK_SIZE);
+        sprite.scale.set(SCALE);
         break;
       default:
         break;
@@ -36,10 +32,8 @@ export default class Pipe {
 
     for (let i = 0; i < h; i++) {
       sprite = new Sprite(this.map.textures["pipe.png"]);
-      sprite.position.set(
-        x * (BLOCK_SIZE / SCALE),
-        (y - i) * (BLOCK_SIZE / SCALE)
-      );
+      sprite.position.set(x * BLOCK_SIZE, (y - i) * BLOCK_SIZE);
+      sprite.scale.set(SCALE);
       this.container.addChild(sprite);
     }
 

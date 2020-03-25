@@ -1,4 +1,9 @@
+import { Sprite } from "pixi.js";
+import { Bodies, Body } from "matter-js";
 import Config from "config";
+
+const SCALE = Config.scale,
+  BLOCK_SIZE = Config.blockSize;
 
 export default class Helpers {
   static keyboard = value => {
@@ -54,5 +59,60 @@ export default class Helpers {
     if (idx === textures.length - 1) {
       return textures[0];
     } else return textures[idx + 1];
+  }
+
+  static GameObject() {
+    return class GameObject {
+      constructor(x, y, w, h, textures, texture, label, isStatic, dFrames) {
+        this.w = w;
+        this.h = h;
+        this.textures = textures;
+        this.sprite = new Sprite(texture);
+        this.sprite.position.set(x * BLOCK_SIZE, y * BLOCK_SIZE);
+        this.sprite.scale.set(SCALE);
+
+        this.body = Bodies.rectangle(x, y, w, h, {
+          label,
+          isStatic
+        });
+        this.body[label] = this;
+        this.frames = 0;
+        this.dFrames = dFrames;
+      }
+
+      update() {
+        this.updateTexture();
+        this.updatePos();
+        this.frames += 1;
+      }
+
+      updateTexture() {
+        if (this.frames % this.dFrames === 0)
+          this.sprite.texture = this.map.textures[
+            Helpers.getNextTexture(
+              this.textures,
+              this.sprite.texture.textureCacheIds[0]
+            )
+          ];
+      }
+
+      updatePos() {
+        this.sprite.x =
+          (this.body.position.x +
+            (this.backwards ? 0.5 + this.w / 2 : 0.5 - this.w / 2)) *
+          BLOCK_SIZE;
+        this.sprite.y = this.body.position.y * BLOCK_SIZE;
+
+        if (!this.body.isStatic) {
+          //Account for the width of player
+          Body.setVelocity(this.body, {
+            x: (this.body.velocity.x += this.accel),
+            y: this.body.velocity.y
+          });
+
+          Body.setAngularVelocity(this.body, 0);
+        }
+      }
+    };
   }
 }
