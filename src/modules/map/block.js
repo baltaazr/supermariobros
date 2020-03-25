@@ -35,6 +35,7 @@ export default class Block {
 
   hit(player) {
     if (
+      (this.type === "qBlock" || this.type === "brickBlock") &&
       Math.abs(player.body.position.y - this.body.position.y - 1) < HIT_MOE.y &&
       Math.abs(player.body.position.x - this.body.position.x) < HIT_MOE.x
     ) {

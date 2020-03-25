@@ -1,6 +1,6 @@
 {"frames": {
 
-"brick_block.png":
+"block.png":
 {
 	"frame": {"x":0,"y":0,"w":16,"h":16},
 	"rotated": false,
@@ -8,7 +8,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
 	"sourceSize": {"w":16,"h":16}
 },
-"coin1.png":
+"brick_block.png":
 {
 	"frame": {"x":16,"y":0,"w":16,"h":16},
 	"rotated": false,
@@ -16,7 +16,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
 	"sourceSize": {"w":16,"h":16}
 },
-"coin2.png":
+"coin1.png":
 {
 	"frame": {"x":32,"y":0,"w":16,"h":16},
 	"rotated": false,
@@ -24,7 +24,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
 	"sourceSize": {"w":16,"h":16}
 },
-"coin3.png":
+"coin2.png":
 {
 	"frame": {"x":48,"y":0,"w":16,"h":16},
 	"rotated": false,
@@ -32,7 +32,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
 	"sourceSize": {"w":16,"h":16}
 },
-"floor.png":
+"coin3.png":
 {
 	"frame": {"x":64,"y":0,"w":16,"h":16},
 	"rotated": false,
@@ -40,7 +40,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
 	"sourceSize": {"w":16,"h":16}
 },
-"hit_block.png":
+"floor.png":
 {
 	"frame": {"x":80,"y":0,"w":16,"h":16},
 	"rotated": false,
@@ -48,9 +48,17 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
 	"sourceSize": {"w":16,"h":16}
 },
+"hit_block.png":
+{
+	"frame": {"x":96,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+},
 "map.png":
 {
-	"frame": {"x":96,"y":0,"w":3392,"h":224},
+	"frame": {"x":112,"y":0,"w":3392,"h":224},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":3392,"h":224},
@@ -58,7 +66,7 @@
 },
 "mario_fall.png":
 {
-	"frame": {"x":3488,"y":0,"w":12,"h":16},
+	"frame": {"x":3504,"y":0,"w":12,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":16},
@@ -66,7 +74,7 @@
 },
 "mario_jump.png":
 {
-	"frame": {"x":3500,"y":0,"w":16,"h":16},
+	"frame": {"x":3516,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -74,7 +82,7 @@
 },
 "mario_moving1.png":
 {
-	"frame": {"x":3516,"y":0,"w":12,"h":16},
+	"frame": {"x":3532,"y":0,"w":12,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":16},
@@ -82,7 +90,7 @@
 },
 "mario_moving2.png":
 {
-	"frame": {"x":3528,"y":0,"w":11,"h":16},
+	"frame": {"x":3544,"y":0,"w":11,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":11,"h":16},
@@ -90,7 +98,7 @@
 },
 "mario_moving3.png":
 {
-	"frame": {"x":3539,"y":0,"w":15,"h":16},
+	"frame": {"x":3555,"y":0,"w":15,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":15,"h":16},
@@ -98,7 +106,7 @@
 },
 "mario_standing.png":
 {
-	"frame": {"x":3554,"y":0,"w":12,"h":16},
+	"frame": {"x":3570,"y":0,"w":12,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":16},
@@ -106,7 +114,7 @@
 },
 "mario_turn.png":
 {
-	"frame": {"x":3566,"y":0,"w":13,"h":16},
+	"frame": {"x":3582,"y":0,"w":13,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":13,"h":16},
@@ -114,7 +122,7 @@
 },
 "pipe.png":
 {
-	"frame": {"x":3579,"y":0,"w":32,"h":16},
+	"frame": {"x":3595,"y":0,"w":32,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":16},
@@ -122,7 +130,7 @@
 },
 "pipe_left.png":
 {
-	"frame": {"x":3611,"y":0,"w":48,"h":32},
+	"frame": {"x":3627,"y":0,"w":48,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":32},
@@ -130,7 +138,7 @@
 },
 "pipe_right.png":
 {
-	"frame": {"x":3659,"y":0,"w":32,"h":32},
+	"frame": {"x":3675,"y":0,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
@@ -138,7 +146,7 @@
 },
 "pipe_up.png":
 {
-	"frame": {"x":3691,"y":0,"w":32,"h":16},
+	"frame": {"x":3707,"y":0,"w":32,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":16},
@@ -146,7 +154,7 @@
 },
 "q_block1.png":
 {
-	"frame": {"x":3723,"y":0,"w":16,"h":16},
+	"frame": {"x":3739,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -154,7 +162,7 @@
 },
 "q_block2.png":
 {
-	"frame": {"x":3739,"y":0,"w":16,"h":16},
+	"frame": {"x":3755,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -162,7 +170,7 @@
 },
 "q_block3.png":
 {
-	"frame": {"x":3755,"y":0,"w":16,"h":16},
+	"frame": {"x":3771,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -170,7 +178,7 @@
 },
 "underground.png":
 {
-	"frame": {"x":3771,"y":0,"w":256,"h":224},
+	"frame": {"x":3787,"y":0,"w":256,"h":224},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":224},
@@ -186,8 +194,8 @@
 	"version": "1.0",
 	"image": "custom.png",
 	"format": "RGBA8888",
-	"size": {"w":4027,"h":224},
+	"size": {"w":4043,"h":224},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:4d6e4f0385a8c09f551ac00f85b4b374:8d94dd49503581cd8a66900c66fcf4a3:31d08ff5a3be2ea6ae3dc47def51455a$"
+	"smartupdate": "$TexturePacker:SmartUpdate:8d5a3dd22a578d27f3da355364d35ac7:44b3f3373fe2d1af27287ef836bbb254:31d08ff5a3be2ea6ae3dc47def51455a$"
 }
 }

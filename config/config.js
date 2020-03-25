@@ -20,7 +20,28 @@ export default {
       { x: 22, y: 8.5, type: "brickBlock" },
       { x: 23, y: 8.5, type: "qBlock" },
       { x: 24, y: 8.5, type: "brickBlock" },
-      { x: 22, y: 5.5, type: "qBlock" }
+      { x: 22, y: 5.5, type: "qBlock" },
+      { x: 134, y: 11.5, type: "block" },
+      { x: 135, y: 11.5, type: "block" },
+      { x: 136, y: 11.5, type: "block" },
+      { x: 137, y: 11.5, type: "block" },
+      { x: 135, y: 10.5, type: "block" },
+      { x: 136, y: 10.5, type: "block" },
+      { x: 137, y: 10.5, type: "block" },
+      { x: 136, y: 9.5, type: "block" },
+      { x: 137, y: 9.5, type: "block" },
+      { x: 137, y: 8.5, type: "block" },
+
+      { x: 143, y: 11.5, type: "block" },
+      { x: 142, y: 11.5, type: "block" },
+      { x: 141, y: 11.5, type: "block" },
+      { x: 140, y: 11.5, type: "block" },
+      { x: 142, y: 10.5, type: "block" },
+      { x: 141, y: 10.5, type: "block" },
+      { x: 140, y: 10.5, type: "block" },
+      { x: 141, y: 9.5, type: "block" },
+      { x: 140, y: 9.5, type: "block" },
+      { x: 140, y: 8.5, type: "block" }
     ],
     pipes: [
       { x: 28, y: 11.5, h: 1, dir: "up" },
@@ -45,6 +66,7 @@ export default {
   },
   block: {
     texturesDir: {
+      block: ["block.png"],
       qBlock: ["q_block1.png", "q_block2.png", "q_block3.png"],
       brickBlock: ["brick_block.png"],
       hitBlock: ["hit_block.png"]

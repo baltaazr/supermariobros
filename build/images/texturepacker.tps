@@ -181,6 +181,7 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
+            <key type="filename">block.png</key>
             <key type="filename">brick_block.png</key>
             <key type="filename">coin1.png</key>
             <key type="filename">coin2.png</key>
@@ -368,6 +369,7 @@
             <filename>pipe_left.png</filename>
             <filename>pipe_up.png</filename>
             <filename>pipe_right.png</filename>
+            <filename>block.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
