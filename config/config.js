@@ -86,5 +86,10 @@ export default {
   },
   pipe: {
     width: 2
+  },
+  powerup: {
+    textureDir: {
+      mushroom: ["mushroom.png"]
+    }
   }
 };
