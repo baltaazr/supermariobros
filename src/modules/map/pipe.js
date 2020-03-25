@@ -3,7 +3,8 @@ import { Bodies, Composite } from "matter-js";
 import Config from "config";
 
 const SCALE = Config.scale,
-  BLOCK_SIZE = Config.blockSize;
+  BLOCK_SIZE = Config.blockSize,
+  WIDTH = Config.pipe.width;
 
 export default class Pipe {
   constructor(x, y, h, dir, map) {
@@ -44,7 +45,7 @@ export default class Pipe {
 
     Composite.add(
       this.composite,
-      Bodies.rectangle(x, y, 2, h, {
+      Bodies.rectangle(x + 0.5, y - h / 2, WIDTH, h + 1, {
         isStatic: true
       })
     );

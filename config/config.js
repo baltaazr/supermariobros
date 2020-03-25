@@ -7,6 +7,10 @@ export default {
     height: 14,
     width: 212,
     floorY: 12.5,
+    floors: [
+      { x: 0, w: 69 },
+      { x: 71, w: 15 }
+    ],
     blocks: [
       { x: 17, y: 8.5, type: "qBlock" },
       { x: 20, y: 8.5, type: "brickBlock" },
@@ -16,7 +20,10 @@ export default {
       { x: 24, y: 8.5, type: "brickBlock" },
       { x: 22, y: 5.5, type: "qBlock" }
     ],
-    pipes: [{ x: 27, y: 11.5, h: 2, dir: "up" }],
+    pipes: [
+      { x: 28, y: 11.5, h: 1, dir: "up" },
+      { x: 38, y: 11.5, h: 2, dir: "up" }
+    ],
     dFrames: 10
   },
   physics: {
@@ -48,5 +55,8 @@ export default {
         y: 1 / 2
       }
     }
+  },
+  pipe: {
+    width: 1.5
   }
 };

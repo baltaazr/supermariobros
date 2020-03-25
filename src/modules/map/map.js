@@ -7,8 +7,8 @@ import Pipe from "./pipe";
 
 const SCALE = Config.scale,
   BLOCK_SIZE = Config.blockSize,
-  MAP_WIDTH = Config.map.width,
   FLOOR_Y = Config.map.floorY,
+  FLOORS = Config.map.floors,
   BLOCKS = Config.map.blocks,
   PIPES = Config.map.pipes;
 
@@ -18,6 +18,21 @@ export default class Map {
     this.spriteContainer = new Container();
     this.spriteContainer.addChild(new Sprite(textures["map.png"]));
     this.composite = Composite.create();
+
+    FLOORS.forEach(floor => {
+      Composite.add(
+        this.composite,
+        Bodies.rectangle(
+          floor.x + floor.w / 2 - 0.5,
+          FLOOR_Y + 0.25,
+          floor.w,
+          1.5,
+          {
+            isStatic: true
+          }
+        )
+      );
+    });
     this.blocks = [];
     BLOCKS.forEach(block => {
       const newBlock = new Block(block.x, block.y, block.type, this);
@@ -33,13 +48,6 @@ export default class Map {
       Composite.add(this.composite, newPipe.composite);
     });
     this.spriteContainer.scale.set(SCALE);
-
-    Composite.add(
-      this.composite,
-      Bodies.rectangle(0, FLOOR_Y, MAP_WIDTH, 1, {
-        isStatic: true
-      })
-    );
   }
 
   update() {
