@@ -34,6 +34,7 @@ export default class Map {
       );
     });
     this.blocks = [];
+    this.powerups = [];
     BLOCKS.forEach(block => {
       const newBlock = new Block(block.x, block.y, block.type, this);
 
@@ -53,6 +54,9 @@ export default class Map {
   update() {
     this.blocks.forEach(block => {
       block.update();
+    });
+    this.powerups.forEach(powerup => {
+      powerup.update();
     });
   }
 }

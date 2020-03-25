@@ -2,8 +2,8 @@ import { Body } from "matter-js";
 import Config from "config";
 import Helpers from "../../utils/helpers";
 
-const ACCEL = Config.physics.accel,
-  JUMP_FORCE = Config.physics.jump.force;
+const ACCEL = Config.player.accel,
+  JUMP_FORCE = Config.player.jump.force;
 
 const keyboard = Helpers.keyboard;
 

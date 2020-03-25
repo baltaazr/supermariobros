@@ -186,9 +186,16 @@
             <key type="filename">coin1.png</key>
             <key type="filename">coin2.png</key>
             <key type="filename">coin3.png</key>
+            <key type="filename">fireflower_1.png</key>
+            <key type="filename">fireflower_2.png</key>
+            <key type="filename">fireflower_3.png</key>
+            <key type="filename">fireflower_4.png</key>
+            <key type="filename">fireflower_5.png</key>
+            <key type="filename">fireflower_6.png</key>
             <key type="filename">floor.png</key>
             <key type="filename">hit_block.png</key>
             <key type="filename">mario_jump.png</key>
+            <key type="filename">mushroom.png</key>
             <key type="filename">q_block1.png</key>
             <key type="filename">q_block2.png</key>
             <key type="filename">q_block3.png</key>
@@ -370,6 +377,13 @@
             <filename>pipe_up.png</filename>
             <filename>pipe_right.png</filename>
             <filename>block.png</filename>
+            <filename>fireflower_1.png</filename>
+            <filename>fireflower_2.png</filename>
+            <filename>fireflower_3.png</filename>
+            <filename>fireflower_4.png</filename>
+            <filename>fireflower_5.png</filename>
+            <filename>fireflower_6.png</filename>
+            <filename>mushroom.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

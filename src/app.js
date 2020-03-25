@@ -7,7 +7,7 @@ import { Player, Enemy, Map } from "./modules";
 
 //Constants
 const GRAVITY_SCALE = Config.physics.gravityScale,
-  JUMP_MOE = Config.physics.jump.moe,
+  JUMP_MOE = Config.player.jump.moe,
   FRICTION = Config.physics.friction,
   FRICTION_AIR = Config.physics.frictionAir,
   FRICTION_STATIC = Config.physics.frictionStatic,
@@ -72,12 +72,8 @@ Events.on(engine, "collisionStart", event => {
     length = event.pairs.length;
   for (i = 0; i < length; i++) {
     pair = event.pairs[i];
-    if (
-      pair.bodyA.label.indexOf("Block") !== -1 ||
-      pair.bodyB.label.indexOf("Block") !== -1
-    ) {
-      const { block } =
-        pair.bodyA.label.indexOf("Block") !== -1 ? pair.bodyA : pair.bodyB;
+    if (pair.bodyA.label === "block" || pair.bodyB.label === "block") {
+      const { block } = pair.bodyA.label === "block" ? pair.bodyA : pair.bodyB;
       block.hit(player);
     }
     if (pair.bodyA.label === "player" || pair.bodyB.label === "player") {
@@ -85,6 +81,18 @@ Events.on(engine, "collisionStart", event => {
       if (body.position.y > player.body.position.y) {
         player.onGround = true;
       }
+    }
+    if (pair.bodyA.label === "powerup" || pair.bodyB.label === "powerup") {
+      let powerup, body;
+      if (pair.bodyA.label === "powerup") {
+        powerup = pair.bodyA.powerup;
+        body = pair.bodyB;
+      } else {
+        powerup = pair.bodyB.powerup;
+        body = pair.bodyA;
+      }
+
+      powerup.hit(body);
     }
   }
 });

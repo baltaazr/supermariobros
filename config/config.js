@@ -46,27 +46,26 @@ export default {
     pipes: [
       { x: 28, y: 11.5, h: 1, dir: "up" },
       { x: 38, y: 11.5, h: 2, dir: "up" }
-    ],
-    dFrames: 10
+    ]
   },
   physics: {
     gravityScale: 0.0001,
     friction: 0,
     frictionAir: 0.1,
     frictionStatic: 0,
-    accel: 0.02,
-    jump: {
-      force: 0.0000025,
-      //Margin of error of velocity y to detect whether player is jumping or not
-      moe: 0.1
-    },
     //Amount a body can sink into another body
     slop: 0
   },
   player: {
     startingPos: { x: 2.5, y: 11.5 },
     dFrames: 5,
-    width: 12 / 16
+    width: 12 / 16,
+    accel: 0.02,
+    jump: {
+      force: 0.0000025,
+      //Margin of error of velocity y to detect whether player is jumping or not
+      moe: 0.1
+    }
   },
   block: {
     texturesDir: {
@@ -82,14 +81,25 @@ export default {
         x: 3 / 4,
         y: 3 / 4
       }
-    }
+    },
+    dFrames: 10
   },
   pipe: {
     width: 2
   },
   powerup: {
-    textureDir: {
-      mushroom: ["mushroom.png"]
-    }
+    texturesDir: {
+      mushroom: ["mushroom.png"],
+      fireflower: [
+        "fireflower_1.png",
+        "fireflower_2.png",
+        "fireflower_3.png",
+        "fireflower_4.png",
+        "fireflower_5.png",
+        "fireflower_6.png"
+      ]
+    },
+    dFrames: 5,
+    accel: 0.003
   }
 };

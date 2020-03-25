@@ -3,10 +3,12 @@ import { Bodies, Composite } from "matter-js";
 import Config from "config";
 import Helpers from "../../utils/helpers";
 
+import Powerup from "../powerup/powerup";
+
 const SCALE = Config.scale,
   BLOCK_SIZE = Config.blockSize,
   TEXTURES_DIR = Config.block.texturesDir,
-  DELTA_FRAMES = Config.map.dFrames,
+  DELTA_FRAMES = Config.block.dFrames,
   HIT_FRAMES = Config.block.hit.frames,
   HIT_DELTA_POS = Config.block.hit.dPos,
   HIT_MOE = Config.block.hit.moe;
@@ -25,7 +27,7 @@ export default class Block {
 
     this.body = Bodies.rectangle(x, y, 1, 1, {
       isStatic: true,
-      label: type,
+      label: "block",
       block: this
     });
 
@@ -43,6 +45,7 @@ export default class Block {
       if (this.type === "qBlock") {
         this.type = "hitBlock";
         this.textures = TEXTURES_DIR[this.type];
+        this.spawnPowerup("mushroom");
       }
     }
   }
@@ -62,7 +65,12 @@ export default class Block {
     this.dFrames += 1;
     if (this.dFrames % DELTA_FRAMES !== 0)
       return this.sprite.texture.textureCacheIds[0];
-    this.sprite.texture = this.map.textures[this.getNextTexture()];
+    this.sprite.texture = this.map.textures[
+      Helpers.getNextTexture(
+        this.textures,
+        this.sprite.texture.textureCacheIds[0]
+      )
+    ];
   }
 
   updatePos() {
@@ -85,10 +93,16 @@ export default class Block {
     }
   }
 
-  getNextTexture() {
-    return Helpers.getNextTexture(
-      this.textures,
-      this.sprite.texture.textureCacheIds[0]
+  spawnPowerup(type) {
+    const newPowerup = new Powerup(
+      this.body.position.x,
+      this.body.position.y - 1,
+      type,
+      this.map
     );
+
+    this.map.spriteContainer.addChild(newPowerup.sprite);
+    Composite.add(this.map.composite, newPowerup.body);
+    this.map.powerups.push(newPowerup);
   }
 }

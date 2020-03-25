@@ -2,7 +2,7 @@
 
 "block.png":
 {
-	"frame": {"x":0,"y":0,"w":16,"h":16},
+	"frame": {"x":75,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -10,7 +10,7 @@
 },
 "brick_block.png":
 {
-	"frame": {"x":16,"y":0,"w":16,"h":16},
+	"frame": {"x":91,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -18,7 +18,7 @@
 },
 "coin1.png":
 {
-	"frame": {"x":32,"y":0,"w":16,"h":16},
+	"frame": {"x":107,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -26,7 +26,7 @@
 },
 "coin2.png":
 {
-	"frame": {"x":48,"y":0,"w":16,"h":16},
+	"frame": {"x":123,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -34,7 +34,55 @@
 },
 "coin3.png":
 {
-	"frame": {"x":64,"y":0,"w":16,"h":16},
+	"frame": {"x":139,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+},
+"fireflower_1.png":
+{
+	"frame": {"x":155,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+},
+"fireflower_2.png":
+{
+	"frame": {"x":171,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+},
+"fireflower_3.png":
+{
+	"frame": {"x":187,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+},
+"fireflower_4.png":
+{
+	"frame": {"x":203,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+},
+"fireflower_5.png":
+{
+	"frame": {"x":219,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+},
+"fireflower_6.png":
+{
+	"frame": {"x":235,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -42,7 +90,7 @@
 },
 "floor.png":
 {
-	"frame": {"x":80,"y":0,"w":16,"h":16},
+	"frame": {"x":251,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -50,7 +98,7 @@
 },
 "hit_block.png":
 {
-	"frame": {"x":96,"y":0,"w":16,"h":16},
+	"frame": {"x":267,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -58,7 +106,7 @@
 },
 "map.png":
 {
-	"frame": {"x":112,"y":0,"w":3392,"h":224},
+	"frame": {"x":0,"y":224,"w":3392,"h":224},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":3392,"h":224},
@@ -66,7 +114,7 @@
 },
 "mario_fall.png":
 {
-	"frame": {"x":3504,"y":0,"w":12,"h":16},
+	"frame": {"x":11,"y":0,"w":12,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":16},
@@ -74,7 +122,7 @@
 },
 "mario_jump.png":
 {
-	"frame": {"x":3516,"y":0,"w":16,"h":16},
+	"frame": {"x":283,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -82,7 +130,7 @@
 },
 "mario_moving1.png":
 {
-	"frame": {"x":3532,"y":0,"w":12,"h":16},
+	"frame": {"x":23,"y":0,"w":12,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":16},
@@ -90,7 +138,7 @@
 },
 "mario_moving2.png":
 {
-	"frame": {"x":3544,"y":0,"w":11,"h":16},
+	"frame": {"x":0,"y":0,"w":11,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":11,"h":16},
@@ -98,7 +146,7 @@
 },
 "mario_moving3.png":
 {
-	"frame": {"x":3555,"y":0,"w":15,"h":16},
+	"frame": {"x":60,"y":0,"w":15,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":15,"h":16},
@@ -106,7 +154,7 @@
 },
 "mario_standing.png":
 {
-	"frame": {"x":3570,"y":0,"w":12,"h":16},
+	"frame": {"x":35,"y":0,"w":12,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":16},
@@ -114,15 +162,23 @@
 },
 "mario_turn.png":
 {
-	"frame": {"x":3582,"y":0,"w":13,"h":16},
+	"frame": {"x":47,"y":0,"w":13,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":13,"h":16},
 	"sourceSize": {"w":13,"h":16}
 },
+"mushroom.png":
+{
+	"frame": {"x":299,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+},
 "pipe.png":
 {
-	"frame": {"x":3595,"y":0,"w":32,"h":16},
+	"frame": {"x":363,"y":0,"w":32,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":16},
@@ -130,7 +186,7 @@
 },
 "pipe_left.png":
 {
-	"frame": {"x":3627,"y":0,"w":48,"h":32},
+	"frame": {"x":459,"y":0,"w":48,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":32},
@@ -138,7 +194,7 @@
 },
 "pipe_right.png":
 {
-	"frame": {"x":3675,"y":0,"w":32,"h":32},
+	"frame": {"x":395,"y":0,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
@@ -146,7 +202,7 @@
 },
 "pipe_up.png":
 {
-	"frame": {"x":3707,"y":0,"w":32,"h":16},
+	"frame": {"x":427,"y":0,"w":32,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":16},
@@ -154,7 +210,7 @@
 },
 "q_block1.png":
 {
-	"frame": {"x":3739,"y":0,"w":16,"h":16},
+	"frame": {"x":315,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -162,7 +218,7 @@
 },
 "q_block2.png":
 {
-	"frame": {"x":3755,"y":0,"w":16,"h":16},
+	"frame": {"x":331,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -170,7 +226,7 @@
 },
 "q_block3.png":
 {
-	"frame": {"x":3771,"y":0,"w":16,"h":16},
+	"frame": {"x":347,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -178,7 +234,7 @@
 },
 "underground.png":
 {
-	"frame": {"x":3787,"y":0,"w":256,"h":224},
+	"frame": {"x":507,"y":0,"w":256,"h":224},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":224},
@@ -186,6 +242,7 @@
 }},
 "animations": {
 	"coin": ["coin1.png","coin2.png","coin3.png"],
+	"fireflower": ["fireflower_1.png","fireflower_2.png","fireflower_3.png","fireflower_4.png","fireflower_5.png","fireflower_6.png"],
 	"mario_moving": ["mario_moving1.png","mario_moving2.png","mario_moving3.png"],
 	"q_block": ["q_block1.png","q_block2.png","q_block3.png"]
 },
@@ -194,8 +251,8 @@
 	"version": "1.0",
 	"image": "custom.png",
 	"format": "RGBA8888",
-	"size": {"w":4043,"h":224},
+	"size": {"w":3392,"h":448},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:8d5a3dd22a578d27f3da355364d35ac7:44b3f3373fe2d1af27287ef836bbb254:31d08ff5a3be2ea6ae3dc47def51455a$"
+	"smartupdate": "$TexturePacker:SmartUpdate:76bad9a62764b0d05ce6775abca32889:5a3388348347f6cf7be5a43626dc2e65:31d08ff5a3be2ea6ae3dc47def51455a$"
 }
 }
