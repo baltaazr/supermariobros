@@ -20,10 +20,11 @@ export default {
     dFrames: 10
   },
   physics: {
-    gravityScale: 0.001,
-    frictionAir: 0.5,
-    accel: 0.1,
-    jumpForce: 0.00001
+    gravityScale: 0.0001,
+    frictionAir: 0.1,
+    friction: 0,
+    accel: 0.02,
+    jumpForce: 0.000003
   },
   player: {
     startingPos: { x: 2.5, y: 11.5 },
@@ -37,10 +38,10 @@ export default {
     },
     hit: {
       frames: 30,
-      dPos: 1,
+      dPos: 0.01,
       moe: {
-        x: 150,
-        y: 100
+        x: 3 / 4,
+        y: 1 / 2
       }
     }
   }
