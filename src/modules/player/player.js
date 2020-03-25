@@ -30,6 +30,8 @@ export default class Player {
     this.backwards = false;
 
     this.dFrames = -1;
+
+    this.onGround = true;
   }
 
   update() {
@@ -65,7 +67,7 @@ export default class Player {
       this.backwards = true;
     }
 
-    if (Math.round(this.body.velocity.y) !== 0) {
+    if (!this.onGround) {
       this.sprite.texture = this.textures["mario_jump.png"];
     } else {
       if (this.accel !== 0) {

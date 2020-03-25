@@ -3,7 +3,7 @@ import Config from "config";
 import Helpers from "../../utils/helpers";
 
 const ACCEL = Config.physics.accel,
-  JUMP_FORCE = Config.physics.jumpForce;
+  JUMP_FORCE = Config.physics.jump.force;
 
 const keyboard = Helpers.keyboard;
 

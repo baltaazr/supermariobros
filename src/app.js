@@ -7,6 +7,7 @@ import { Player, Enemy, Map } from "./modules";
 
 //Constants
 const GRAVITY_SCALE = Config.physics.gravityScale;
+const JUMP_MOE = Config.physics.jump.moe;
 
 const innerWidth = window.innerWidth;
 const innerHeight = window.innerHeight;
@@ -58,16 +59,33 @@ Events.on(engine, "collisionStart", event => {
   for (i = 0; i < length; i++) {
     pair = event.pairs[i];
     if (
-      !(
-        pair.bodyA.label.indexOf("Block") !== -1 ||
-        pair.bodyB.label.indexOf("Block") !== -1
-      )
+      pair.bodyA.label.indexOf("Block") !== -1 ||
+      pair.bodyB.label.indexOf("Block") !== -1
     ) {
-      continue;
+      const { block } =
+        pair.bodyA.label.indexOf("Block") !== -1 ? pair.bodyA : pair.bodyB;
+      block.hit(player);
     }
-    const { block } =
-      pair.bodyA.label.indexOf("Block") !== -1 ? pair.bodyA : pair.bodyB;
-    block.hit(player);
+    if (pair.bodyA.label === "player" || pair.bodyB.label === "player") {
+      const body = pair.bodyA.label !== "player" ? pair.bodyA : pair.bodyB;
+      if (body.position.y > player.body.position.y) {
+        player.onGround = true;
+      }
+    }
+  }
+});
+
+Events.on(engine, "collisionEnd", event => {
+  var i,
+    pair,
+    length = event.pairs.length;
+  for (i = 0; i < length; i++) {
+    pair = event.pairs[i];
+    if (pair.bodyA.label === "player" || pair.bodyB.label === "player") {
+      if (Math.abs(player.body.velocity.y) > JUMP_MOE) {
+        player.onGround = false;
+      }
+    }
   }
 });
 

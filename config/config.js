@@ -24,7 +24,11 @@ export default {
     frictionAir: 0.1,
     friction: 0,
     accel: 0.02,
-    jumpForce: 0.000003
+    jump: {
+      force: 0.000003,
+      //Margin of error of velocity y to detect whether player is jumping or not
+      moe: 0.1
+    }
   },
   player: {
     startingPos: { x: 2.5, y: 11.5 },
