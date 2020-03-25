@@ -91,8 +91,10 @@ Events.on(engine, "collisionStart", event => {
         powerup = pair.bodyB.powerup;
         body = pair.bodyA;
       }
-
-      powerup.hit(body);
+      if (body.label === "player") {
+        player.consumePowerup(powerup.type);
+        powerup.delete();
+      } else powerup.hit(body);
     }
   }
 });

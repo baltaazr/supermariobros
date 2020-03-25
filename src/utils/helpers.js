@@ -1,5 +1,5 @@
 import { Sprite } from "pixi.js";
-import { Bodies, Body } from "matter-js";
+import { Bodies, Body, Composite } from "matter-js";
 import Config from "config";
 
 const SCALE = Config.scale,
@@ -112,6 +112,13 @@ export default class Helpers {
 
           Body.setAngularVelocity(this.body, 0);
         }
+      }
+
+      delete() {
+        this.sprite.parent.removeChild(this.sprite);
+        Composite.remove(this.map.composite, this.body);
+        const listName = `${this.body.label}s`;
+        this.map[listName].splice(this.map[listName].indexOf(this), 1);
       }
     };
   }

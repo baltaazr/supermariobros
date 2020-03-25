@@ -3,7 +3,7 @@ import { Bodies, Composite } from "matter-js";
 import Config from "config";
 import Helpers from "../../utils/helpers";
 
-import Powerup from "../powerup/powerup";
+import Powerup from "./powerup";
 
 const TEXTURES_DIR = Config.block.texturesDir,
   DELTA_FRAMES = Config.block.dFrames,
@@ -46,12 +46,6 @@ export default class Block extends GameObject {
         } else this.spawnPowerup(this.item);
       }
     }
-  }
-
-  delete() {
-    this.sprite.parent.removeChild(this.sprite);
-    Composite.remove(this.map.composite, this.body);
-    this.map.blocks.splice(this.map.blocks.indexOf(this), 1);
   }
 
   updatePos() {

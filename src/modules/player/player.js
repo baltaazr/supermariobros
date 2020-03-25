@@ -69,4 +69,6 @@ export default class Player extends GameObject {
       }
     }
   }
+
+  consumePowerup(powerup) {}
 }

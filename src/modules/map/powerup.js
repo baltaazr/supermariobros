@@ -25,13 +25,11 @@ export default class Powerup extends GameObject {
     this.body.friction = 0;
     this.body.frictionAir = 0;
     this.body.slop = 0;
-    Body.setVelocity(this.body, { x: VEL, y: 0 });
 
     this.map = map;
     this.type = type;
     this.accel = 0;
-    // if (type === "mushroom") this.accel = ACCEL;
-    // else this.accel = 0;
+    if (type === "mushroom") Body.setVelocity(this.body, { x: VEL, y: 0 });
   }
 
   hit(body) {
