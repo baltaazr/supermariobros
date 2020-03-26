@@ -15,7 +15,7 @@ export default {
     ],
     //All qBlocks have to have an item property
     blocks: [
-      { x: 17, y: 8.5, type: "qBlock", item: "coin" },
+      { x: 17, y: 8.5, type: "qBlock", item: "fireflower" },
       { x: 20, y: 8.5, type: "brickBlock" },
       { x: 21, y: 8.5, type: "qBlock", item: "mushroom" },
       { x: 22, y: 8.5, type: "brickBlock" },
@@ -84,6 +84,16 @@ export default {
         ],
         jump: "big_mario_jump.png",
         turn: "big_mario_turn.png"
+      },
+      fire: {
+        stand: "fire_mario_stand.png",
+        move: [
+          "fire_mario_move1.png",
+          "fire_mario_move2.png",
+          "fire_mario_move3.png"
+        ],
+        jump: "fire_mario_jump.png",
+        turn: "fire_mario_turn.png"
       }
     }
   },

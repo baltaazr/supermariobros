@@ -33,6 +33,7 @@ export default class Player extends GameObject {
     this.accel = 0;
     this.backwards = false;
     this.onGround = true;
+    this.state = "small";
   }
 
   update() {
@@ -79,28 +80,35 @@ export default class Player extends GameObject {
   consumePowerup(powerup) {
     switch (powerup) {
       case "mushroom":
-        this.textures = TEXTURES_DIR.big;
+        if (this.state === "small") {
+          this.state = "big";
 
-        World.remove(this.world, this.body);
-        this.w = WIDTH_B;
-        this.h = 2;
-        this.body = Bodies.rectangle(
-          this.body.position.x,
-          this.body.position.y - 0.5,
-          this.w,
-          this.h,
-          {
-            label: this.body.label,
-            mass: this.body.mass,
-            friction: 0,
-            frictionAir: 0.1,
-            slop: 0
-          }
-        );
-        World.add(this.world, this.body);
+          this.textures = TEXTURES_DIR.big;
+        }
+      case "fireflower":
+        this.state = "fire";
         break;
       default:
         break;
     }
+    this.textures = TEXTURES_DIR.fire;
+
+    World.remove(this.world, this.body);
+    this.w = WIDTH_B;
+    this.h = 2;
+    this.body = Bodies.rectangle(
+      this.body.position.x,
+      this.body.position.y - 0.5,
+      this.w,
+      this.h,
+      {
+        label: this.body.label,
+        mass: this.body.mass,
+        friction: this.body.friction,
+        frictionAir: this.body.frictionAir,
+        slop: this.body.slop
+      }
+    );
+    World.add(this.world, this.body);
   }
 }

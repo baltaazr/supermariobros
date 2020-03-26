@@ -248,6 +248,41 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">fire_mario_crouch.png</key>
+            <key type="filename">fire_mario_jump.png</key>
+            <key type="filename">fire_mario_move1.png</key>
+            <key type="filename">fire_mario_move3.png</key>
+            <key type="filename">fire_mario_stand.png</key>
+            <key type="filename">fire_mario_turn.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>4,8,8,16</rect>
+                <key>scale9Paddings</key>
+                <rect>4,8,8,16</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">fire_mario_move2.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>4,8,7,16</rect>
+                <key>scale9Paddings</key>
+                <rect>4,8,7,16</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">map.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -442,6 +477,13 @@
             <filename>big_mario_move2.png</filename>
             <filename>big_mario_move3.png</filename>
             <filename>big_mario_stand.png</filename>
+            <filename>fire_mario_crouch.png</filename>
+            <filename>fire_mario_jump.png</filename>
+            <filename>fire_mario_move1.png</filename>
+            <filename>fire_mario_move2.png</filename>
+            <filename>fire_mario_move3.png</filename>
+            <filename>fire_mario_stand.png</filename>
+            <filename>fire_mario_turn.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
