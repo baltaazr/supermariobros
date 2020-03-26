@@ -96,6 +96,17 @@ Events.on(engine, "collisionStart", event => {
         powerup.delete();
       } else powerup.hit(body);
     }
+    if (pair.bodyA.label === "fireball" || pair.bodyB.label === "fireball") {
+      let fireball, body;
+      if (pair.bodyA.label === "fireball") {
+        fireball = pair.bodyA.fireball;
+        body = pair.bodyB;
+      } else {
+        fireball = pair.bodyB.fireball;
+        body = pair.bodyA;
+      }
+      fireball.hit(body);
+    }
   }
 });
 

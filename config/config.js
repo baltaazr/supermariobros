@@ -136,6 +136,6 @@ export default {
   fireball: {
     w: 0.5,
     h: 0.5,
-    vel: 1
+    vel: 0.1
   }
 };
