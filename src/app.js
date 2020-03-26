@@ -74,7 +74,9 @@ Events.on(engine, "collisionStart", event => {
     pair = event.pairs[i];
     if (pair.bodyA.label === "block" || pair.bodyB.label === "block") {
       const { block } = pair.bodyA.label === "block" ? pair.bodyA : pair.bodyB;
-      block.hit(player);
+      player.state !== "small" && block.type === "brickBlock"
+        ? block.delete()
+        : block.hit(player);
     }
     if (pair.bodyA.label === "player" || pair.bodyB.label === "player") {
       const body = pair.bodyA.label !== "player" ? pair.bodyA : pair.bodyB;
