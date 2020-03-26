@@ -31,24 +31,25 @@ export default class Block extends GameObject {
     this.hitDFrames = 0;
   }
 
-  hit(player) {
-    if (
-      (this.type === "qBlock" || this.type === "brickBlock") &&
-      Math.abs(
-        player.body.position.y -
-          this.body.position.y -
-          (this.h / 2 + player.h / 2)
-      ) < HIT_MOE.y &&
-      Math.abs(player.body.position.x - this.body.position.x) < HIT_MOE.x
-    ) {
-      this.hitBool = true;
-      if (this.type === "qBlock") {
-        this.type = "hitBlock";
-        this.textures = TEXTURES_DIR[this.type];
-        if (this.item === "coin") {
-        } else this.spawnPowerup(this.item);
-      } else if (this.type === "brickBlock" && player.state !== "small")
-        this.delete();
+  hit(body) {
+    if (body.label === "player") {
+      const { player } = body;
+      if (
+        (this.type === "qBlock" || this.type === "brickBlock") &&
+        Math.abs(
+          body.position.y - this.body.position.y - (this.h / 2 + player.h / 2)
+        ) < HIT_MOE.y &&
+        Math.abs(body.position.x - this.body.position.x) < HIT_MOE.x
+      ) {
+        this.hitBool = true;
+        if (this.type === "qBlock") {
+          this.type = "hitBlock";
+          this.textures = TEXTURES_DIR[this.type];
+          if (this.item === "coin") {
+          } else this.spawnPowerup(this.item);
+        } else if (this.type === "brickBlock" && player.state !== "small")
+          this.delete();
+      }
     }
   }
 

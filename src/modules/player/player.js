@@ -38,6 +38,10 @@ export default class Player extends GameObject {
     this.fireballs = [];
   }
 
+  hit(body) {
+    if (body.position.y > this.body.position.y) this.onGround = true;
+  }
+
   update() {
     if (
       this.sprite.getGlobalPosition().x > window.innerWidth / 2 &&
@@ -93,13 +97,14 @@ export default class Player extends GameObject {
         this.w,
         this.h,
         {
-          label: this.body.label,
+          label: "player",
           mass: this.body.mass,
           friction: this.body.friction,
           frictionAir: this.body.frictionAir,
           slop: this.body.slop
         }
       );
+      this.body["player"] = this;
       World.add(this.world, this.body);
     }
     switch (powerup) {

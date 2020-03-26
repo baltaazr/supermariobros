@@ -68,57 +68,26 @@ const play = delta => {
   map.update();
 };
 
+const labels = ["player", "block", "powerup", "fireball", "goomba"];
 Events.on(engine, "collisionStart", event => {
   var i,
     pair,
     length = event.pairs.length;
   for (i = 0; i < length; i++) {
     pair = event.pairs[i];
-    if (pair.bodyA.label === "block" || pair.bodyB.label === "block") {
-      const { block } = pair.bodyA.label === "block" ? pair.bodyA : pair.bodyB;
-      block.hit(player);
-    }
-    if (pair.bodyA.label === "player" || pair.bodyB.label === "player") {
-      const body = pair.bodyA.label !== "player" ? pair.bodyA : pair.bodyB;
-      if (body.position.y > player.body.position.y) {
-        player.onGround = true;
+    for (let j = 0; j < labels.length; j++) {
+      const label = labels[j];
+      if (pair.bodyA.label === label || pair.bodyB.label === label) {
+        let gameObject, body;
+        if (pair.bodyA.label === label) {
+          gameObject = pair.bodyA[label];
+          body = pair.bodyB;
+        } else {
+          gameObject = pair.bodyB[label];
+          body = pair.bodyA;
+        }
+        gameObject.hit(body);
       }
-    }
-    if (pair.bodyA.label === "powerup" || pair.bodyB.label === "powerup") {
-      let powerup, body;
-      if (pair.bodyA.label === "powerup") {
-        powerup = pair.bodyA.powerup;
-        body = pair.bodyB;
-      } else {
-        powerup = pair.bodyB.powerup;
-        body = pair.bodyA;
-      }
-      if (body.label === "player") {
-        player.consumePowerup(powerup.type);
-        powerup.delete();
-      } else powerup.hit(body);
-    }
-    if (pair.bodyA.label === "fireball" || pair.bodyB.label === "fireball") {
-      let fireball, body;
-      if (pair.bodyA.label === "fireball") {
-        fireball = pair.bodyA.fireball;
-        body = pair.bodyB;
-      } else {
-        fireball = pair.bodyB.fireball;
-        body = pair.bodyA;
-      }
-      fireball.hit(body);
-    }
-    if (pair.bodyA.label === "goomba" || pair.bodyB.label === "goomba") {
-      let goomba, body;
-      if (pair.bodyA.label === "goomba") {
-        goomba = pair.bodyA.goomba;
-        body = pair.bodyB;
-      } else {
-        goomba = pair.bodyB.goomba;
-        body = pair.bodyA;
-      }
-      goomba.hit(body);
     }
   }
 });

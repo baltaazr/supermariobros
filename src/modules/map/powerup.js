@@ -32,7 +32,10 @@ export default class Powerup extends GameObject {
   }
 
   hit(body) {
-    if (this.type === "mushroom")
+    if (body.label === "player") {
+      body.player.consumePowerup(this.type);
+      this.delete();
+    } else if (this.type === "mushroom")
       Body.setVelocity(this.body, {
         x: this.body.velocity.x > 0 ? -VEL : VEL,
         y: 0
