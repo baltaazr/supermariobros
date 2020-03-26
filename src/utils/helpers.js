@@ -7,6 +7,7 @@ const SCALE = Config.scale,
 
 export default class Helpers {
   static keyboard = value => {
+    // To find key values -> https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values
     let key = {};
     key.value = value;
     key.isDown = false;

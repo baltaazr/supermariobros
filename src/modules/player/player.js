@@ -3,11 +3,11 @@ import Config from "config";
 import Helpers from "../../utils/helpers";
 
 import Controls from "./controls";
-import { TilingSprite } from "pixi.js";
+import Fireball from "./fireball";
 
 const SCALE = Config.scale,
-  WIDTH_S = Config.player.widthS,
-  WIDTH_B = Config.player.widthB,
+  WIDTH_S = Config.player.wS,
+  WIDTH_B = Config.player.wB,
   STARTING_POS = Config.player.startingPos,
   TEXTURES_DIR = Config.player.texturesDir,
   DELTA_FRAMES = Config.player.dFrames,
@@ -34,6 +34,8 @@ export default class Player extends GameObject {
     this.backwards = false;
     this.onGround = true;
     this.state = "small";
+
+    this.fireballs = [];
   }
 
   update() {
@@ -44,6 +46,9 @@ export default class Player extends GameObject {
       this.sprite.parent.x -=
         this.sprite.getGlobalPosition().x - window.innerWidth / 2;
     super.update();
+    this.fireballs.forEach(fireball => {
+      fireball.update();
+    });
   }
 
   updateTexture() {
@@ -111,5 +116,13 @@ export default class Player extends GameObject {
       default:
         break;
     }
+  }
+
+  spawnFireball() {
+    const newFireball = new Fireball(this.body.x + 1, this.body.y, this);
+
+    this.fireballs.push(newFireball);
+    this.sprite.parent.addChild(newFireball.sprite);
+    World.add(this.world, newFireball.body);
   }
 }

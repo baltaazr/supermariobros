@@ -60,8 +60,8 @@ export default {
   player: {
     startingPos: { x: 2.5, y: 11.5 },
     dFrames: 5,
-    widthS: 12 / 16,
-    widthB: 1,
+    wS: 12 / 16,
+    wB: 1,
     accel: 0.02,
     jump: {
       force: 0.0000025,
@@ -109,7 +109,7 @@ export default {
       dPos: 0.01,
       //Margin of error of hit to detect whether or not it was hit from the bottom and near the same x-axis
       moe: {
-        x: 3 / 4,
+        x: 1 / 2,
         y: 3 / 4
       }
     },
@@ -132,5 +132,10 @@ export default {
     },
     dFrames: 5,
     vel: 0.1
+  },
+  fireball: {
+    w: 0.5,
+    h: 0.5,
+    vel: 1
   }
 };
