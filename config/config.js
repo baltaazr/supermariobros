@@ -48,7 +48,7 @@ export default {
       { x: 28, y: 11.5, h: 1, dir: "up" },
       { x: 38, y: 11.5, h: 2, dir: "up" }
     ],
-    goombas: [{ x: 21, y: 8.5 }]
+    goombas: [{ x: 21, y: 11.5 }]
   },
   physics: {
     gravityScale: 0.0001,
@@ -150,6 +150,6 @@ export default {
       w: 1,
       h: 2
     },
-    vel: 0.1
+    vel: 0.05
   }
 };

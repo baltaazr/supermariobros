@@ -46,10 +46,12 @@ loader.add("images/custom.json").load(() => {
   const bodies = Composite.allBodies(engine.world);
   for (let i = 0; i < bodies.length; i++) {
     const body = bodies[i];
-    body.friction = FRICTION;
-    body.frictionAir = FRICTION_AIR;
-    body.frictionStatic = FRICTION_STATIC;
-    body.slop = SLOP;
+    if (body.label !== "goomba") {
+      body.friction = FRICTION;
+      body.frictionAir = FRICTION_AIR;
+      body.frictionStatic = FRICTION_STATIC;
+      body.slop = SLOP;
+    }
   }
 
   state = play;
@@ -106,6 +108,17 @@ Events.on(engine, "collisionStart", event => {
         body = pair.bodyA;
       }
       fireball.hit(body);
+    }
+    if (pair.bodyA.label === "goomba" || pair.bodyB.label === "goomba") {
+      let goomba, body;
+      if (pair.bodyA.label === "goomba") {
+        goomba = pair.bodyA.goomba;
+        body = pair.bodyB;
+      } else {
+        goomba = pair.bodyB.goomba;
+        body = pair.bodyA;
+      }
+      goomba.hit(body);
     }
   }
 });

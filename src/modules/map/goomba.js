@@ -18,7 +18,7 @@ export default class Goomba extends GameObject {
       HEIGHT,
       TEXTURES_DIR,
       map.textures[TEXTURES_DIR[0]],
-      "enemy",
+      "goomba",
       false,
       DELTA_FRAMES
     );
@@ -30,5 +30,15 @@ export default class Goomba extends GameObject {
     this.map = map;
     this.accel = 0;
     Body.setVelocity(this.body, { x: -VEL, y: 0 });
+  }
+
+  update() {
+    super.update();
+    Body.setVelocity(this.body, { x: -VEL, y: 0 });
+  }
+
+  hit(body) {
+    if (body.label === "player" && body.position.y < this.body.position.y)
+      this.delete();
   }
 }
