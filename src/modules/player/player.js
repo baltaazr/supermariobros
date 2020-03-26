@@ -134,4 +134,35 @@ export default class Player extends GameObject {
     this.sprite.parent.addChild(newFireball.sprite);
     World.add(this.world, newFireball.body);
   }
+
+  hurt() {
+    if (this.state === "small") {
+      // DEATH
+    } else if (this.state === "big") {
+      World.remove(this.world, this.body);
+      this.w = WIDTH_S;
+      this.h = 1;
+      this.body = Bodies.rectangle(
+        this.body.position.x,
+        this.body.position.y + 0.5,
+        this.w,
+        this.h,
+        {
+          label: "player",
+          mass: this.body.mass,
+          friction: this.body.friction,
+          frictionAir: this.body.frictionAir,
+          slop: this.body.slop
+        }
+      );
+      this.body["player"] = this;
+      World.add(this.world, this.body);
+
+      this.state = "big";
+      this.textures = TEXTURES_DIR.big;
+    } else {
+      this.state = "fire";
+      this.textures = TEXTURES_DIR.fire;
+    }
+  }
 }

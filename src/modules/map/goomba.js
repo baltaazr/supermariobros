@@ -38,7 +38,14 @@ export default class Goomba extends GameObject {
   }
 
   hit(body) {
-    if (body.label === "player" && body.position.y < this.body.position.y)
-      this.delete();
+    if (body.label === "player") {
+      if (
+        body.position.y < this.body.position.y &&
+        Math.abs(this.body.position.x - body.position.x) <
+          body.player.w / 2 + this.w / 2
+      )
+        this.delete();
+      else body.player.hurt();
+    }
   }
 }
