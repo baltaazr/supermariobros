@@ -4,13 +4,15 @@ import Config from "config";
 
 import Block from "./block";
 import Pipe from "./pipe";
+import Goomba from "./goomba";
 
 const SCALE = Config.scale,
   BLOCK_SIZE = Config.blockSize,
   FLOOR_Y = Config.map.floorY,
   FLOORS = Config.map.floors,
   BLOCKS = Config.map.blocks,
-  PIPES = Config.map.pipes;
+  PIPES = Config.map.pipes,
+  GOOMBAS = Config.map.goombas;
 
 export default class Map {
   constructor(textures) {
@@ -20,6 +22,10 @@ export default class Map {
     backgroundSprite.scale.set(SCALE);
     this.spriteContainer.addChild(backgroundSprite);
     this.composite = Composite.create();
+
+    this.blocks = [];
+    this.powerups = [];
+    this.goombas = [];
 
     FLOORS.forEach(floor => {
       Composite.add(
@@ -35,8 +41,6 @@ export default class Map {
         )
       );
     });
-    this.blocks = [];
-    this.powerups = [];
     BLOCKS.forEach(block => {
       const newBlock = new Block(
         block.x,
@@ -56,6 +60,13 @@ export default class Map {
       this.spriteContainer.addChild(newPipe.container);
       Composite.add(this.composite, newPipe.composite);
     });
+    GOOMBAS.forEach(goomba => {
+      const newGoomba = new Goomba(goomba.x, goomba.y, this);
+
+      this.goombas.push(newGoomba);
+      this.spriteContainer.addChild(newGoomba.sprite);
+      Composite.add(this.composite, newGoomba.body);
+    });
   }
 
   update() {
@@ -64,6 +75,9 @@ export default class Map {
     });
     this.powerups.forEach(powerup => {
       powerup.update();
+    });
+    this.goombas.forEach(goomba => {
+      goomba.update();
     });
   }
 }

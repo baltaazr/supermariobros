@@ -3,7 +3,7 @@ import { Application, Loader } from "pixi.js";
 import { Engine, World, Events, Composite } from "matter-js";
 import Config from "config";
 
-import { Player, Enemy, Map } from "./modules";
+import { Player, Map } from "./modules";
 
 //Constants
 const GRAVITY_SCALE = Config.physics.gravityScale,
@@ -30,7 +30,7 @@ const loader = Loader.shared;
 const engine = Engine.create();
 
 //Game Setup
-let player, enemy, map, textures, state;
+let player, map, textures, state;
 loader.add("images/custom.json").load(() => {
   textures = loader.resources["images/custom.json"].textures;
 

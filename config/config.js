@@ -47,7 +47,8 @@ export default {
     pipes: [
       { x: 28, y: 11.5, h: 1, dir: "up" },
       { x: 38, y: 11.5, h: 2, dir: "up" }
-    ]
+    ],
+    goombas: [{ x: 21, y: 8.5 }]
   },
   physics: {
     gravityScale: 0.0001,
@@ -136,6 +137,19 @@ export default {
   fireball: {
     w: 0.5,
     h: 0.5,
+    vel: 0.2
+  },
+  enemy: {
+    goomba: {
+      w: 1,
+      h: 1,
+      texturesDir: ["goomba1.png", "goomba2.png"],
+      dFrames: 10
+    },
+    koopa: {
+      w: 1,
+      h: 2
+    },
     vel: 0.1
   }
 };

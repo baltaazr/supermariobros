@@ -228,6 +228,9 @@
             <key type="filename">fireflower_5.png</key>
             <key type="filename">fireflower_6.png</key>
             <key type="filename">floor.png</key>
+            <key type="filename">goomba1.png</key>
+            <key type="filename">goomba2.png</key>
+            <key type="filename">goomba_squash.png</key>
             <key type="filename">hit_block.png</key>
             <key type="filename">mario_jump.png</key>
             <key type="filename">mushroom.png</key>
@@ -500,6 +503,9 @@
             <filename>fire_mario_stand.png</filename>
             <filename>fire_mario_turn.png</filename>
             <filename>fireball.png</filename>
+            <filename>goomba1.png</filename>
+            <filename>goomba2.png</filename>
+            <filename>goomba_squash.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
