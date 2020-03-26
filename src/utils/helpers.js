@@ -97,12 +97,12 @@ export default class Helpers {
       }
 
       updatePos() {
-        //Account for the width of player
+        //Account for the width and height of GameObject
         this.sprite.x =
           (this.body.position.x +
             (this.backwards ? 0.5 + this.w / 2 : 0.5 - this.w / 2)) *
           BLOCK_SIZE;
-        this.sprite.y = this.body.position.y * BLOCK_SIZE;
+        this.sprite.y = (this.body.position.y + 0.5 - this.h / 2) * BLOCK_SIZE;
 
         if (!this.body.isStatic) {
           Body.setVelocity(this.body, {

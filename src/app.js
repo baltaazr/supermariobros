@@ -37,7 +37,7 @@ loader.add("images/custom.json").load(() => {
   map = new Map(textures);
   renderer.stage.addChild(map.spriteContainer);
 
-  player = new Player(textures);
+  player = new Player(textures, engine.world);
   renderer.stage.addChild(player.sprite);
 
   World.add(engine.world, [player.body, map.composite]);

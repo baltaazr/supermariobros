@@ -181,6 +181,41 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
+            <key type="filename">big_mario_crouch.png</key>
+            <key type="filename">big_mario_jump.png</key>
+            <key type="filename">big_mario_move1.png</key>
+            <key type="filename">big_mario_move3.png</key>
+            <key type="filename">big_mario_stand.png</key>
+            <key type="filename">big_mario_turn.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>4,8,8,17</rect>
+                <key>scale9Paddings</key>
+                <rect>4,8,8,17</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">big_mario_move2.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>4,8,7,17</rect>
+                <key>scale9Paddings</key>
+                <rect>4,8,7,17</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">block.png</key>
             <key type="filename">brick_block.png</key>
             <key type="filename">coin1.png</key>
@@ -229,8 +264,8 @@
                 <false/>
             </struct>
             <key type="filename">mario_fall.png</key>
-            <key type="filename">mario_moving1.png</key>
-            <key type="filename">mario_standing.png</key>
+            <key type="filename">mario_move1.png</key>
+            <key type="filename">mario_stand.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -245,7 +280,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">mario_moving2.png</key>
+            <key type="filename">mario_move2.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -260,7 +295,7 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">mario_moving3.png</key>
+            <key type="filename">mario_move3.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -272,6 +307,21 @@
                 <rect>4,4,7,8</rect>
                 <key>scale9Paddings</key>
                 <rect>4,4,7,8</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">mario_transition.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>4,6,8,12</rect>
+                <key>scale9Paddings</key>
+                <rect>4,6,8,12</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -358,10 +408,6 @@
             <filename>floor.png</filename>
             <filename>mario_fall.png</filename>
             <filename>mario_jump.png</filename>
-            <filename>mario_moving1.png</filename>
-            <filename>mario_moving2.png</filename>
-            <filename>mario_moving3.png</filename>
-            <filename>mario_standing.png</filename>
             <filename>mario_turn.png</filename>
             <filename>underground.png</filename>
             <filename>map.png</filename>
@@ -384,6 +430,18 @@
             <filename>fireflower_5.png</filename>
             <filename>fireflower_6.png</filename>
             <filename>mushroom.png</filename>
+            <filename>big_mario_crouch.png</filename>
+            <filename>big_mario_jump.png</filename>
+            <filename>big_mario_turn.png</filename>
+            <filename>mario_transition.png</filename>
+            <filename>mario_move1.png</filename>
+            <filename>mario_move2.png</filename>
+            <filename>mario_move3.png</filename>
+            <filename>mario_stand.png</filename>
+            <filename>big_mario_move1.png</filename>
+            <filename>big_mario_move2.png</filename>
+            <filename>big_mario_move3.png</filename>
+            <filename>big_mario_stand.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

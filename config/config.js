@@ -60,12 +60,31 @@ export default {
   player: {
     startingPos: { x: 2.5, y: 11.5 },
     dFrames: 5,
-    width: 12 / 16,
+    widthS: 12 / 16,
+    widthB: 1,
     accel: 0.02,
     jump: {
       force: 0.0000025,
       //Margin of error of velocity y to detect whether player is jumping or not
       moe: 0.1
+    },
+    texturesDir: {
+      small: {
+        stand: "mario_stand.png",
+        move: ["mario_move1.png", "mario_move2.png", "mario_move3.png"],
+        jump: "mario_jump.png",
+        turn: "mario_turn.png"
+      },
+      big: {
+        stand: "big_mario_stand.png",
+        move: [
+          "big_mario_move1.png",
+          "big_mario_move2.png",
+          "big_mario_move3.png"
+        ],
+        jump: "big_mario_jump.png",
+        turn: "big_mario_turn.png"
+      }
     }
   },
   block: {

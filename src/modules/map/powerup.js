@@ -1,5 +1,4 @@
-import { Sprite } from "pixi.js";
-import { Bodies, Body } from "matter-js";
+import { Body } from "matter-js";
 import Config from "config";
 import Helpers from "../../utils/helpers";
 
