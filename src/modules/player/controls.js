@@ -16,6 +16,7 @@ export default class Controls {
 
     //Left
     this.left.press = () => {
+      if (player.grace) return;
       player.accel = -ACCEL;
     };
 
@@ -27,6 +28,7 @@ export default class Controls {
 
     //Right
     this.right.press = () => {
+      if (player.grace) return;
       player.accel = ACCEL;
     };
     this.right.release = () => {
@@ -37,6 +39,7 @@ export default class Controls {
 
     //Jump
     this.jump.press = () => {
+      if (player.grace) return;
       if (player.onGround)
         Body.applyForce(player.body, player.body.position, {
           x: 0,
@@ -46,6 +49,7 @@ export default class Controls {
 
     //Fireball
     this.fireball.press = () => {
+      if (player.grace) return;
       if (player.state === "fire") player.spawnFireball();
     };
   }

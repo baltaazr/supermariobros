@@ -11,6 +11,7 @@ const SCALE = Config.scale,
   STARTING_POS = Config.player.startingPos,
   TEXTURES_DIR = Config.player.texturesDir,
   DELTA_FRAMES = Config.player.dFrames,
+  GRACE_PERIOD = Config.player.graceP,
   GameObject = Helpers.GameObject();
 
 export default class Player extends GameObject {
@@ -33,6 +34,8 @@ export default class Player extends GameObject {
     this.backwards = false;
     this.onGround = true;
     this.state = "small";
+    this.grace = false;
+    this.graceP = 0;
     this.fireballs = [];
   }
 
@@ -51,6 +54,14 @@ export default class Player extends GameObject {
     this.fireballs.forEach(fireball => {
       fireball.update();
     });
+    if (this.grace) {
+      this.graceP += 1;
+      if (this.graceP > GRACE_PERIOD) {
+        this.grace = false;
+        this.sprite.alpha = 1;
+        World.add(this.world, this.body);
+      }
+    }
   }
 
   updateTexture() {
@@ -162,5 +173,8 @@ export default class Player extends GameObject {
       this.state = "big";
       this.textures = TEXTURES_DIR.big;
     }
+    this.grace = true;
+    this.sprite.alpha = 0.5;
+    World.remove(this.world, this.body);
   }
 }

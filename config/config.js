@@ -73,6 +73,8 @@ export default {
       //Margin of error of velocity y to detect whether player is jumping or not
       moe: 0.1
     },
+    //Grace period in frames after being hit
+    graceP: 60,
     texturesDir: {
       small: {
         stand: "mario_stand.png",

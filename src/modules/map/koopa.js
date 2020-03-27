@@ -80,7 +80,7 @@ export default class Koopa extends GameObject {
           y: 0
         });
     } else {
-      if (Math.abs(this.body.velocity.x) < 0.1) {
+      if (this.body.velocity.x === 0) {
         if (body.label === "player")
           Body.setVelocity(this.body, {
             x: this.body.position.x < body.position.x ? -VEL_SHELL : VEL_SHELL,
