@@ -2,7 +2,7 @@
 
 "big_mario_crouch.png":
 {
-	"frame": {"x":499,"y":0,"w":16,"h":32},
+	"frame": {"x":563,"y":0,"w":16,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":32},
@@ -10,7 +10,7 @@
 },
 "big_mario_jump.png":
 {
-	"frame": {"x":515,"y":0,"w":16,"h":32},
+	"frame": {"x":579,"y":0,"w":16,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":32},
@@ -18,7 +18,7 @@
 },
 "big_mario_move1.png":
 {
-	"frame": {"x":531,"y":0,"w":16,"h":32},
+	"frame": {"x":595,"y":0,"w":16,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":32},
@@ -26,7 +26,7 @@
 },
 "big_mario_move2.png":
 {
-	"frame": {"x":547,"y":0,"w":14,"h":32},
+	"frame": {"x":611,"y":0,"w":14,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":14,"h":32},
@@ -34,7 +34,7 @@
 },
 "big_mario_move3.png":
 {
-	"frame": {"x":561,"y":0,"w":16,"h":32},
+	"frame": {"x":625,"y":0,"w":16,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":32},
@@ -42,7 +42,7 @@
 },
 "big_mario_stand.png":
 {
-	"frame": {"x":577,"y":0,"w":16,"h":32},
+	"frame": {"x":641,"y":0,"w":16,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":32},
@@ -50,7 +50,7 @@
 },
 "big_mario_turn.png":
 {
-	"frame": {"x":593,"y":0,"w":16,"h":32},
+	"frame": {"x":657,"y":0,"w":16,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":32},
@@ -98,7 +98,7 @@
 },
 "fire_mario_crouch.png":
 {
-	"frame": {"x":609,"y":0,"w":16,"h":32},
+	"frame": {"x":673,"y":0,"w":16,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":32},
@@ -106,7 +106,7 @@
 },
 "fire_mario_jump.png":
 {
-	"frame": {"x":625,"y":0,"w":16,"h":32},
+	"frame": {"x":689,"y":0,"w":16,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":32},
@@ -114,7 +114,7 @@
 },
 "fire_mario_move1.png":
 {
-	"frame": {"x":641,"y":0,"w":16,"h":32},
+	"frame": {"x":705,"y":0,"w":16,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":32},
@@ -122,7 +122,7 @@
 },
 "fire_mario_move2.png":
 {
-	"frame": {"x":657,"y":0,"w":14,"h":32},
+	"frame": {"x":721,"y":0,"w":14,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":14,"h":32},
@@ -130,7 +130,7 @@
 },
 "fire_mario_move3.png":
 {
-	"frame": {"x":671,"y":0,"w":16,"h":32},
+	"frame": {"x":735,"y":0,"w":16,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":32},
@@ -138,7 +138,7 @@
 },
 "fire_mario_stand.png":
 {
-	"frame": {"x":687,"y":0,"w":16,"h":32},
+	"frame": {"x":751,"y":0,"w":16,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":32},
@@ -146,7 +146,7 @@
 },
 "fire_mario_turn.png":
 {
-	"frame": {"x":703,"y":0,"w":16,"h":32},
+	"frame": {"x":767,"y":0,"w":16,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":32},
@@ -248,6 +248,38 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
 	"sourceSize": {"w":16,"h":16}
 },
+"koopa_move1.png":
+{
+	"frame": {"x":515,"y":0,"w":16,"h":24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":24},
+	"sourceSize": {"w":16,"h":24}
+},
+"koopa_move2.png":
+{
+	"frame": {"x":531,"y":0,"w":16,"h":24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":24},
+	"sourceSize": {"w":16,"h":24}
+},
+"koopa_shell.png":
+{
+	"frame": {"x":264,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+},
+"koopa_shell_transition.png":
+{
+	"frame": {"x":280,"y":0,"w":16,"h":16},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
+	"sourceSize": {"w":16,"h":16}
+},
 "map.png":
 {
 	"frame": {"x":0,"y":32,"w":3392,"h":224},
@@ -258,7 +290,7 @@
 },
 "mario_fall.png":
 {
-	"frame": {"x":264,"y":0,"w":12,"h":16},
+	"frame": {"x":296,"y":0,"w":12,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":16},
@@ -266,7 +298,7 @@
 },
 "mario_jump.png":
 {
-	"frame": {"x":276,"y":0,"w":16,"h":16},
+	"frame": {"x":308,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -274,7 +306,7 @@
 },
 "mario_move1.png":
 {
-	"frame": {"x":292,"y":0,"w":12,"h":16},
+	"frame": {"x":324,"y":0,"w":12,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":16},
@@ -282,7 +314,7 @@
 },
 "mario_move2.png":
 {
-	"frame": {"x":304,"y":0,"w":11,"h":16},
+	"frame": {"x":336,"y":0,"w":11,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":11,"h":16},
@@ -290,7 +322,7 @@
 },
 "mario_move3.png":
 {
-	"frame": {"x":315,"y":0,"w":15,"h":16},
+	"frame": {"x":347,"y":0,"w":15,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":15,"h":16},
@@ -298,7 +330,7 @@
 },
 "mario_stand.png":
 {
-	"frame": {"x":330,"y":0,"w":12,"h":16},
+	"frame": {"x":362,"y":0,"w":12,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":16},
@@ -306,7 +338,7 @@
 },
 "mario_transition.png":
 {
-	"frame": {"x":483,"y":0,"w":16,"h":24},
+	"frame": {"x":547,"y":0,"w":16,"h":24},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":24},
@@ -314,7 +346,7 @@
 },
 "mario_turn.png":
 {
-	"frame": {"x":342,"y":0,"w":13,"h":16},
+	"frame": {"x":374,"y":0,"w":13,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":13,"h":16},
@@ -322,7 +354,7 @@
 },
 "mushroom.png":
 {
-	"frame": {"x":355,"y":0,"w":16,"h":16},
+	"frame": {"x":387,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -330,7 +362,7 @@
 },
 "pipe.png":
 {
-	"frame": {"x":371,"y":0,"w":32,"h":16},
+	"frame": {"x":403,"y":0,"w":32,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":16},
@@ -338,7 +370,7 @@
 },
 "pipe_left.png":
 {
-	"frame": {"x":719,"y":0,"w":48,"h":32},
+	"frame": {"x":783,"y":0,"w":48,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":32},
@@ -346,7 +378,7 @@
 },
 "pipe_right.png":
 {
-	"frame": {"x":767,"y":0,"w":32,"h":32},
+	"frame": {"x":831,"y":0,"w":32,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
@@ -354,7 +386,7 @@
 },
 "pipe_up.png":
 {
-	"frame": {"x":403,"y":0,"w":32,"h":16},
+	"frame": {"x":435,"y":0,"w":32,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":16},
@@ -362,7 +394,7 @@
 },
 "q_block1.png":
 {
-	"frame": {"x":435,"y":0,"w":16,"h":16},
+	"frame": {"x":467,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -370,7 +402,7 @@
 },
 "q_block2.png":
 {
-	"frame": {"x":451,"y":0,"w":16,"h":16},
+	"frame": {"x":483,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -378,7 +410,7 @@
 },
 "q_block3.png":
 {
-	"frame": {"x":467,"y":0,"w":16,"h":16},
+	"frame": {"x":499,"y":0,"w":16,"h":16},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":16},
@@ -398,6 +430,7 @@
 	"fire_mario_move": ["fire_mario_move1.png","fire_mario_move2.png","fire_mario_move3.png"],
 	"fireflower": ["fireflower_1.png","fireflower_2.png","fireflower_3.png","fireflower_4.png","fireflower_5.png","fireflower_6.png"],
 	"goomba": ["goomba1.png","goomba2.png"],
+	"koopa_move": ["koopa_move1.png","koopa_move2.png"],
 	"mario_move": ["mario_move1.png","mario_move2.png","mario_move3.png"],
 	"q_block": ["q_block1.png","q_block2.png","q_block3.png"]
 },
@@ -408,6 +441,6 @@
 	"format": "RGBA8888",
 	"size": {"w":3648,"h":256},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:84e68adbd6f0111b6a18d4e175b5c87a:460769c921f319ff54cdced85e72fb87:31d08ff5a3be2ea6ae3dc47def51455a$"
+	"smartupdate": "$TexturePacker:SmartUpdate:76e6f5a6e04adaffdb1ffec79637a1be:b42d10d8461446758ac82b4f8d5a4b18:31d08ff5a3be2ea6ae3dc47def51455a$"
 }
 }

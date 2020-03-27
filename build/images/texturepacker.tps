@@ -232,6 +232,8 @@
             <key type="filename">goomba2.png</key>
             <key type="filename">goomba_squash.png</key>
             <key type="filename">hit_block.png</key>
+            <key type="filename">koopa_shell.png</key>
+            <key type="filename">koopa_shell_transition.png</key>
             <key type="filename">mario_jump.png</key>
             <key type="filename">mushroom.png</key>
             <key type="filename">q_block1.png</key>
@@ -301,6 +303,23 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">koopa_move1.png</key>
+            <key type="filename">koopa_move2.png</key>
+            <key type="filename">mario_transition.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>4,6,8,12</rect>
+                <key>scale9Paddings</key>
+                <rect>4,6,8,12</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">map.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -360,21 +379,6 @@
                 <rect>4,4,7,8</rect>
                 <key>scale9Paddings</key>
                 <rect>4,4,7,8</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">mario_transition.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>4,6,8,12</rect>
-                <key>scale9Paddings</key>
-                <rect>4,6,8,12</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -506,6 +510,10 @@
             <filename>goomba1.png</filename>
             <filename>goomba2.png</filename>
             <filename>goomba_squash.png</filename>
+            <filename>koopa_move1.png</filename>
+            <filename>koopa_move2.png</filename>
+            <filename>koopa_shell.png</filename>
+            <filename>koopa_shell_transition.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

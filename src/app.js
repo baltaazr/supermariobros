@@ -46,12 +46,10 @@ loader.add("images/custom.json").load(() => {
   const bodies = Composite.allBodies(engine.world);
   for (let i = 0; i < bodies.length; i++) {
     const body = bodies[i];
-    if (body.label !== "goomba") {
-      body.friction = FRICTION;
-      body.frictionAir = FRICTION_AIR;
-      body.frictionStatic = FRICTION_STATIC;
-      body.slop = SLOP;
-    }
+    body.friction = FRICTION;
+    body.frictionAir = FRICTION_AIR;
+    body.frictionStatic = FRICTION_STATIC;
+    body.slop = SLOP;
   }
 
   state = play;
@@ -68,7 +66,7 @@ const play = delta => {
   map.update();
 };
 
-const labels = ["player", "block", "powerup", "fireball", "goomba"];
+const labels = ["player", "block", "powerup", "fireball", "goomba", "koopa"];
 Events.on(engine, "collisionStart", event => {
   var i,
     pair,

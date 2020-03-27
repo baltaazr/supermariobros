@@ -5,7 +5,7 @@ import Helpers from "../../utils/helpers";
 const WIDTH = Config.enemy.goomba.w,
   HEIGHT = Config.enemy.goomba.h,
   TEXTURES_DIR = Config.enemy.goomba.texturesDir,
-  DELTA_FRAMES = Config.enemy.goomba.dFrames,
+  DELTA_FRAMES = Config.enemy.dFrames,
   VEL = Config.enemy.vel,
   GameObject = Helpers.GameObject();
 

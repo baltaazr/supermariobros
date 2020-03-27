@@ -48,7 +48,10 @@ export default {
       { x: 28, y: 11.5, h: 1, dir: "up" },
       { x: 38, y: 11.5, h: 2, dir: "up" }
     ],
-    goombas: [{ x: 21, y: 11.5 }]
+    goombas: [
+      //{ x: 21, y: 11.5 }
+    ],
+    koopas: [{ x: 21, y: 11.5 }]
   },
   physics: {
     gravityScale: 0.0001,
@@ -61,6 +64,7 @@ export default {
   player: {
     startingPos: { x: 2.5, y: 11.5 },
     dFrames: 5,
+    //Height for big and small state
     wS: 12 / 16,
     wB: 1,
     accel: 0.02,
@@ -143,13 +147,20 @@ export default {
     goomba: {
       w: 1,
       h: 1,
-      texturesDir: ["goomba1.png", "goomba2.png"],
-      dFrames: 10
+      texturesDir: ["goomba1.png", "goomba2.png"]
     },
     koopa: {
       w: 1,
-      h: 2
+      //Height for move and shell state
+      hM: 1.5,
+      hS: 1,
+      texturesDir: {
+        move: ["koopa_move1.png", "koopa_move2.png"],
+        shell: ["koopa_shell.png"],
+        transition: ["koopa_shell_transition.png"]
+      }
     },
+    dFrames: 10,
     vel: 0.05
   }
 };

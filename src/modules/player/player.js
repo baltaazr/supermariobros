@@ -28,13 +28,11 @@ export default class Player extends GameObject {
     );
     this.world = world;
     this.globalTextures = globalTextures;
-
     this.controls = new Controls(this);
     this.accel = 0;
     this.backwards = false;
     this.onGround = true;
     this.state = "small";
-
     this.fireballs = [];
   }
 

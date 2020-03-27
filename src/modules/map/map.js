@@ -5,6 +5,7 @@ import Config from "config";
 import Block from "./block";
 import Pipe from "./pipe";
 import Goomba from "./goomba";
+import Koopa from "./koopa";
 
 const SCALE = Config.scale,
   BLOCK_SIZE = Config.blockSize,
@@ -12,7 +13,8 @@ const SCALE = Config.scale,
   FLOORS = Config.map.floors,
   BLOCKS = Config.map.blocks,
   PIPES = Config.map.pipes,
-  GOOMBAS = Config.map.goombas;
+  GOOMBAS = Config.map.goombas,
+  KOOPAS = Config.map.koopas;
 
 export default class Map {
   constructor(textures) {
@@ -26,6 +28,7 @@ export default class Map {
     this.blocks = [];
     this.powerups = [];
     this.goombas = [];
+    this.koopas = [];
 
     FLOORS.forEach(floor => {
       Composite.add(
@@ -67,6 +70,13 @@ export default class Map {
       this.spriteContainer.addChild(newGoomba.sprite);
       Composite.add(this.composite, newGoomba.body);
     });
+    KOOPAS.forEach(koopa => {
+      const newKoopa = new Koopa(koopa.x, koopa.y, this);
+
+      this.koopas.push(newKoopa);
+      this.spriteContainer.addChild(newKoopa.sprite);
+      Composite.add(this.composite, newKoopa.body);
+    });
   }
 
   update() {
@@ -78,6 +88,9 @@ export default class Map {
     });
     this.goombas.forEach(goomba => {
       goomba.update();
+    });
+    this.koopas.forEach(koopa => {
+      koopa.update();
     });
   }
 }
