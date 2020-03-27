@@ -1,4 +1,4 @@
-import { Bodies, World } from "matter-js";
+import { Bodies, Body, World } from "matter-js";
 import Config from "config";
 import Helpers from "../../utils/helpers";
 
@@ -55,9 +55,14 @@ export default class Player extends GameObject {
       fireball.update();
     });
     if (this.grace) {
+      Body.setVelocity(this.body, {
+        x: 0,
+        y: 0
+      });
       this.graceP += 1;
       if (this.graceP > GRACE_PERIOD) {
         this.grace = false;
+        this.graceP = 0;
         this.sprite.alpha = 1;
         World.add(this.world, this.body);
       }
@@ -167,8 +172,8 @@ export default class Player extends GameObject {
       this.body["player"] = this;
       World.add(this.world, this.body);
 
-      this.state = "big";
-      this.textures = TEXTURES_DIR.big;
+      this.state = "small";
+      this.textures = TEXTURES_DIR.small;
     } else {
       this.state = "big";
       this.textures = TEXTURES_DIR.big;

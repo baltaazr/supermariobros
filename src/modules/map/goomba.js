@@ -32,10 +32,6 @@ export default class Goomba extends GameObject {
     Body.setVelocity(this.body, { x: -VEL, y: 0 });
   }
 
-  update() {
-    super.update();
-  }
-
   hit(body) {
     if (body.label === "fireball") {
       this.delete();
