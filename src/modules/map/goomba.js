@@ -45,7 +45,7 @@ export default class Goomba extends GameObject {
       )
         this.delete();
       else body.player.hurt();
-    } else
+    } else if (body.label === "pipe")
       Body.setVelocity(this.body, {
         x: this.body.velocity.x > 0 ? -VEL : VEL,
         y: 0

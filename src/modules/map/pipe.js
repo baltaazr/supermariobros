@@ -40,7 +40,8 @@ export default class Pipe {
     Composite.add(
       this.composite,
       Bodies.rectangle(x + 0.5, y - h / 2, WIDTH, h + 1, {
-        isStatic: true
+        isStatic: true,
+        label: "pipe"
       })
     );
   }

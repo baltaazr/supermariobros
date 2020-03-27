@@ -2,8 +2,7 @@ import { Body, Composite, Bodies } from "matter-js";
 import Config from "config";
 import Helpers from "../../utils/helpers";
 
-const SCALE = Config.scale,
-  WIDTH = Config.enemy.koopa.w,
+const WIDTH = Config.enemy.koopa.w,
   HEIGHT_MOVE = Config.enemy.koopa.hM,
   HEIGHT_SHELL = Config.enemy.koopa.hS,
   TEXTURES_DIR = Config.enemy.koopa.texturesDir,
@@ -75,13 +74,13 @@ export default class Koopa extends GameObject {
           this.state = "shell";
           this.textures = TEXTURES_DIR.shell;
         } else body.player.hurt();
-      } else {
+      } else if (body.label === "pipe") {
         this.backwards = this.body.velocity.x < 0;
         Body.setVelocity(this.body, {
           x: this.backwards ? VEL_MOVE : -VEL_MOVE,
           y: 0
         });
-        this.sprite.scale.x = this.backwards ? -SCALE : SCALE;
+        this.sprite.scale.x = this.backwards ? -this.sprite.scale.x : this.sprite.scale.x;
       }
     } else {
       if (this.body.velocity.x === 0) {

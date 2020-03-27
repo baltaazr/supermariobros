@@ -139,9 +139,10 @@ export default class Player extends GameObject {
 
   spawnFireball() {
     const newFireball = new Fireball(
-      this.body.position.x + 1,
+      this.body.position.x + (this.backwards ? -1 : 1),
       this.body.position.y,
-      this
+      this,
+      this.backwards
     );
 
     this.fireballs.push(newFireball);

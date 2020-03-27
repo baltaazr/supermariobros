@@ -8,7 +8,7 @@ const WIDTH = Config.fireball.w,
   GameObject = Helpers.GameObject();
 
 export default class Fireball extends GameObject {
-  constructor(x, y, player) {
+  constructor(x, y, player, backwards) {
     super(
       x,
       y,
@@ -26,9 +26,13 @@ export default class Fireball extends GameObject {
     this.body.slop = 0;
 
     this.player = player;
+    this.backwards = backwards;
+    this.sprite.scale.x = this.backwards
+      ? -this.sprite.scale.x
+      : this.sprite.scale.x;
 
     this.accel = 0;
-    Body.setVelocity(this.body, { x: VEL, y: VEL });
+    Body.setVelocity(this.body, { x: this.backwards ? -VEL : VEL, y: VEL });
   }
 
   updateTexture() {}
@@ -36,7 +40,7 @@ export default class Fireball extends GameObject {
   hit(body) {
     if (body.position.y > this.body.position.y)
       Body.setVelocity(this.body, {
-        x: VEL,
+        x: this.backwards ? -VEL : VEL,
         y: this.body.velocity.y > 0 ? -VEL : VEL
       });
     else this.delete();
