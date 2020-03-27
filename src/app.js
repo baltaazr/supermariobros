@@ -46,10 +46,12 @@ loader.add("images/custom.json").load(() => {
   const bodies = Composite.allBodies(engine.world);
   for (let i = 0; i < bodies.length; i++) {
     const body = bodies[i];
-    body.friction = FRICTION;
-    body.frictionAir = FRICTION_AIR;
-    body.frictionStatic = FRICTION_STATIC;
-    body.slop = SLOP;
+    if (body.label !== "koopa" && body.label !== "goomba") {
+      body.friction = FRICTION;
+      body.frictionAir = FRICTION_AIR;
+      body.frictionStatic = FRICTION_STATIC;
+      body.slop = SLOP;
+    }
   }
 
   state = play;

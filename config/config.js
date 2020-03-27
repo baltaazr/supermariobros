@@ -158,7 +158,9 @@ export default {
         move: ["koopa_move1.png", "koopa_move2.png"],
         shell: ["koopa_shell.png"],
         transition: ["koopa_shell_transition.png"]
-      }
+      },
+      //Velocity of shell
+      velS: 0.5
     },
     dFrames: 10,
     vel: 0.05

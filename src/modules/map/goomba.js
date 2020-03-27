@@ -34,10 +34,13 @@ export default class Goomba extends GameObject {
 
   update() {
     super.update();
-    Body.setVelocity(this.body, { x: -VEL, y: 0 });
   }
 
   hit(body) {
+    if (body.label === "fireball") {
+      this.delete();
+      return;
+    }
     if (body.label === "player") {
       if (
         body.position.y < this.body.position.y &&
@@ -46,6 +49,10 @@ export default class Goomba extends GameObject {
       )
         this.delete();
       else body.player.hurt();
-    }
+    } else
+      Body.setVelocity(this.body, {
+        x: this.body.velocity.x > 0 ? -VEL : VEL,
+        y: 0
+      });
   }
 }

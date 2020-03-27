@@ -159,8 +159,8 @@ export default class Player extends GameObject {
       this.state = "big";
       this.textures = TEXTURES_DIR.big;
     } else {
-      this.state = "fire";
-      this.textures = TEXTURES_DIR.fire;
+      this.state = "big";
+      this.textures = TEXTURES_DIR.big;
     }
   }
 }
