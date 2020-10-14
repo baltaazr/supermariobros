@@ -4,7 +4,7 @@
 
 ```bash
 # Cloning the project
-cd https://github.com/balta-z-r/supermariobros.git
+git clone https://github.com/balta-z-r/supermariobros.git
 cd supermariobros
 
 # Installing dependencies
